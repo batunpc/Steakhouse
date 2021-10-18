@@ -1,0 +1,187 @@
+<!--
+* ********************************************************************************/ 
+*  WEB322 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Batuhan Ipci    Student ID: 130971203       Date: 10/03/2021
+*
+*  Online (Heroku) URL:    https://stark-crag-53181.herokuapp.com/
+*
+********************************************************************************/ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | Batu Steak House</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+  <!-- navigation bar -->
+  <header >
+    <div>
+      <a href="/"> <img class="logo" src="static/images/logo.png" alt="barbeque logo" />
+      </a>
+    </div>
+    <div>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/">Home</a></li>
+          <li><a href="mealPack">Meals Package</a></li>
+          <li><a href="#">Grocery</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="navbar_btns"  id="login-btn" >
+      <div >
+        <a href="userForms"> Log in <i class="fa fa-user-circle"></i></a>
+        <a href=""> Shop <i class="fa fa-shopping-cart"></i></a>
+        <a href=""> Find <i class="fa fa-search"></i></a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- figure 1.1-->
+    <section id="hero_image">
+      <div id="hero_text">
+        <h1 align="center">Chef Batu Recipes</h1>
+        <p><b>Healthy Meals Delivered To Your Door, Eat & Repeat</b></p>
+      </div>
+      <button><a href="#menu"><b>Order Now!</b></a></button>
+    </section>
+
+    <div class="content_section">
+      <div class="content_text">Healthy food, for a wealthy mood!</div>
+    </div>
+
+    <!-- figure 1.2 -->
+    <div class="containter_column">
+
+      <div class="column1">
+        <img src="static/images/menu.png" style="width: 48%; height: 220px; border-radius: 35%" />
+        <p style="color: #eccbbf"">
+          <b style=" font-size: 1.4vw">Pick</b>
+          <div align="center">
+            <p style="font-size: 130%; width: 50%; ">10+ types of steaks done with special skills. Order some <br>(or
+              all)
+              of these meals</p>
+          </div>
+        </p>
+      </div>
+
+      <div class="column2">
+        <img src="static/images/delivery.png" style="width: 48%; height: 220px; border-radius: 35%" />
+        <p style="color: #eccbbf"">
+          <b style=" font-size: 1.4vw;">Heat</b>
+          <div align="center">
+            <p style="font-size: 130%; width: 50%; ">Food delivery now becomes very simple. Order with our amazing app
+              now!</p>
+          </div>
+        </p>
+      </div>
+
+      <div class="column3">
+        <img src="static/images/bakery.png" style="width: 48%; height: 220px; border-radius: 35%" />
+        <p style="color:#eccbbf""><b style=" font-size: 1.4vw">Eat</b></p>
+        <div align="center">
+          <p style="font-size: 130%;width: 50%; ">Microwave or Oven, No Cleaning Up. Adventurous & Healthy eating</p>
+        </div>
+      </div>
+
+      <div class="column4">
+        <img src="static/images/food.png" style="width: 48%; height: 220px; border-radius: 35%" />
+        <p style="text-align: center; color: #eccbbf">
+          <b style="font-size: 1.4vw">Repeat</b>
+          <div align="center">
+            <p style="font-size: 130%; width: 50%; ">Cooking techniques for perfectly grilled skirt steak, rib-eye,
+              filet mignon and more</p>
+          </div>
+        </p>
+      </div>
+    </div>
+
+    <!--figure 1.3-->
+    <a name="menu"></a>
+    <div class="content_section">
+      <div class="content_text">
+        Batu Chef Cooks, You Simply Heat and Eat
+      </div>
+    </div>
+    <!--top meals-->
+    <div class="containter_column_meal">
+      <div class="meal_column1">
+        <img src="static/images/tbone.jpg" style="width: 80%; height: 240px;" />
+        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- T-BONES' Unusual Reuben -</figcaption>
+        <div align="center">
+        </div>
+      </div>
+
+      <div class="meal_column2">
+        <img src="static/images/ribeye.jpg" style="width: 80%; height: 240px; " />
+        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- Smoked Rib-Eye -</figcaption>
+        <div align="center">
+        </div>
+      </div>
+
+      <div class="meal_column3">
+        <img src="static/images/flank.jpg" style="width: 80%; height: 240px; " />
+        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- 8 oz. Signature Flank Steak -</figcaption>
+        <div align="center">
+        </div>
+      </div>
+
+      <div class="meal_column4">
+        <img src="static/images/tunasteak.jpg" style="width: 80%; height: 240px; " />
+        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- Grilled Lime Tuna Steak -</figcaption>
+        <div align="center">
+        </div>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer_container">
+      <div class="row">
+        <div class="footer_column">
+          <h4>Batu Steak House</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="meal">Meals Package</a></li>
+            <li><a href="#">Grocery</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4>Meals Package</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Order status</a></li>
+            <li><a href="#">Payment options</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4>follow me</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-terminal "></i></a>
+            <a href="https://github.com/batunpc"><i class="fa fa-github "></i></a>
+            <a href="#"><i class="fa fa-instagram"></i></a>
+            <a href="mailto:batuhanipci@yahoo.com.tr"><i class="fa fa-yahoo"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

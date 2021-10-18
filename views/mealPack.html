@@ -1,0 +1,184 @@
+<!--
+* *********************************************************************************/ 
+*  WEB322 – Assignment 1
+*  I declare that this assignment is my own work in accordance with Seneca  Academic Policy.  
+*  No part of this assignment has been copied manually or electronically from any other source
+*  (including web sites) or distributed to other students.
+* 
+*  Name: Batuhan Ipci    Student ID: 130971203       Date: 10/03/2021
+*
+*  Online (Heroku) URL:    https://stark-crag-53181.herokuapp.com/
+*
+********************************************************************************/ 
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meals Package | Batu Steak House</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+
+<body>
+  <header >
+    <div>
+      <a href="/"> <img class="logo" src="static/images/logo.png" alt="barbeque logo" />
+      </a>
+    </div>
+    <div>
+      <nav>
+        <ul class="nav_links">
+          <li><a href="/">Home</a></li>
+          <li><a href="mealPack">Meals Package</a></li>
+          <li><a href="#">Grocery</a></li>
+          <li><a href="#">About</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="navbar_btns"  id="login-btn" >
+      <div >
+        <a href="userForms"> Log in <i class="fa fa-user-circle"></i></a>
+        <a href=""> Shop <i class="fa fa-shopping-cart"></i></a>
+        <a href=""> Find <i class="fa fa-search"></i></a>
+      </div>
+    </div>
+  </header>
+  
+  <main>
+    <!-- figure 1.1-->
+    <section id="hero_image_2nd">
+      <div id="hero_text_2nd">
+        <h1>Eat towards your goals</h1>
+        <p>
+          Your Journey, Your Way…<br>
+          <i style="font-size: 22px;">Keto, Weight Loss, Vegan and more… we’ve got you covered.</i>
+        </p>
+      </div>
+      <button><a href="#menu"><b>Shop Your Journey!</b></a></button>
+    </section>
+
+
+    <div class="contentsec_mealpac">
+      <div class="contentext_mealpac">Pick a package, choose your meals, achive your goal - <b>it's that easy</b><br />
+        <p style="color: #F0A500;">We serve Vegan Meat!</p>
+      </div>
+    </div>
+
+
+    <!--figure 1.4 -->
+    <div class="containter_column_mealpac">
+
+      <div class="mealpac_column2 ">
+        <div>
+          <figure> <img src="static/images/weightloss.jpg" style="width: 90%; height: 280px; border-radius: 15%;" />
+          </figure>
+          <div align="center">
+            <b style="font-size: 1.3vw;color:#f17244 ">Weight Loss</b>
+            <p style=" color:#F0E5CF;font-size:1.3vw; text-align: center;">High protein, low-calorie meals nutrient
+              profile tuned for weight loss.</p>
+          </div>
+        </div>
+        <br> 
+        <div align="center">
+          <u class="hoverme">45.9 <i class="fa fa-euro fa-1x"></i></u>
+          <div class="hide">2 meals per package</div>
+        </div>
+      </div>
+
+
+      <div class="mealpac_column2">
+        <div>
+          <figure> <img src="static/images/musclegain.jpg" style="width: 90%; height: 280px; border-radius: 15%;" />
+          </figure>
+          <div align="center">
+            <b style="font-size:1.3vw;color:#f17244 ">Muscle Gain</b>
+            <p style=" color:#F0E5CF;font-size: 1.3vw; text-align: center;">Higher protein and calorie portions to
+              support your muscle gain momentum.</p>
+          </div>
+        </div>
+        <br>
+        <div align="center">
+          <u class="hoverme">52.0 <i class="fa fa-euro fa-1x"></i></u>
+          <div class="hide">5 meals per package</div>
+        </div>
+      </div>
+
+      <div class="mealpac_column3">
+        <div>
+          <figure><img src="static/images/keto.jpg" style="width: 90%; height: 280px; border-radius: 15%;" /></figure>
+        </div>
+        <div align="center">
+          <b style="font-size:1.3vw;color:#f17244 ">Keto</b>
+          <p style=" color:#F0E5CF;font-size:  1.3vw; text-align: center;">High fat, low carb meals with moderate
+            protein to sustain ketosis.</p>
+        </div>
+        <br>
+        <div align="center">
+          <u class="hoverme">32.9 <i class="fa fa-euro fa-1x"></i></u>
+          <div class="hide">3 meal per package</div>
+        </div>
+      </div>
+
+
+      <div class="mealpac_column4">
+        <div>
+          <figure><img src="static/images/fatburner.jpg" style="width: 90%; height: 280px; border-radius: 15%;" />
+          </figure>
+          <div align="center">
+            <b style="font-size:1.3vw;color:#f17244 ">Fat Burner</b>
+            <p style=" color:#F0E5CF;font-size:  1.3vw; text-align: center;">Low carb, nutrient-rich meals with
+              fat-burning profiles to support fat loss.</p>
+          </div>
+        </div>
+        <br>
+        <div align="center">
+          <u class="hoverme">25.5 <i class="fa fa-euro fa-1x"></i></u>
+          <div class="hide">2 meals per package</div>
+        </div>
+      </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="footer_container">
+      <div class="row">
+        <div class="footer_column">
+          <h4>Batu Steak House</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="meal">Meals Package</a></li>
+            <li><a href="#">Grocery</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4>Meals Package</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Order status</a></li>
+            <li><a href="#">Payment options</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4>follow me</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-terminal "></i></a>
+            <a href="https://github.com/batunpc"><i class="fa fa-github "></i></a>
+            <a href="#"><i class="fa fa-instagram "></i></a>
+            <a href="mailto:batuhanipci@yahoo.com.tr"><i class="fa fa-yahoo "></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

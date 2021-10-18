@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title> Customer Login | Batu Steak House</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/login-form.css">
+  <link rel="stylesheet" href="/static/register-form.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<header class="navbar_form">
+  <div>
+    <a href="/"> <img class="logo" src="static/images/logo.png" alt="barbeque logo" />
+    </a>
+  </div>
+  <div>
+    <nav>
+      <ul class="nav_links">
+        <li><a href="/">Home</a></li>
+        <li><a href="mealPack">Meals Package</a></li>
+        <li><a href="#">Grocery</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="navbar_btns"  id="login-btn" >
+    <div >
+      <a href="userForms"> Log in <i class="fa fa-user-circle"></i></a>
+      <a href=""> Shop <i class="fa fa-shopping-cart"></i></a>
+      <a href=""> Find <i class="fa fa-search"></i></a>
+    </div>
+  </div>
+</header>
+
+<body>
+  <div class="form_container">
+    <fieldset>
+      <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244"
+            class=" fa fa-user-circle fa-2x"></i></span>
+        Customer Login</legend>
+      <div class="social-links-form">
+        <a href="userForms"><i class="fa fa-google fa-2x"></i></a>
+        <a href=""><i class="fa fa-github fa-2x"></i></a>
+        <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+        <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
+      </div>
+      <br>
+      <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
+        <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
+          or
+        </span>
+      </div>
+      <br>
+
+      <form class="login_form" novalidate>
+        <p>
+          <label for="mail">
+            <input type="email" id="mail" name="mail" placeholder="Your Email *" required>
+            <span class="error"></span>
+          </label>
+        </p>
+        <p>
+          <label for="password">
+            <input type="password" id="password" name="password" placeholder="Password *" required>
+            <span class="error"></span>
+          </label>
+        </p>
+        <button id="log-in-btn"><b>Log In</b></button>
+        <script src="/scripts/login-form.js"></script>
+
+        <div style="width: 100%; border-top: 1px solid #eccbbf; text-align: center;">
+        </div>
+      </form>
+    </fieldset>
+    <button class="register-btn"><a href="#open"><span>Create New Account</span> </a></button>
+
+  </div>
+
+
+  <!--============== pop-up model ===============-->
+  <div id="open" class="modalBox">
+    <div>
+      <p><a class="close" title="Close" href="#close" rel="nofollow">&times;</a></p>
+      <div class="modal-left">
+        <img id="modal-img-left" src="static/svg/modal-right.svg" alt="">
+      </div>
+      <div class="modal-right">
+        <img id="modal-img-right" src="static/svg/modal-left.svg" alt="">
+      </div>
+      <div class="form_container">
+        <h1 id="modal-img-text"> <span id="modal-img-text-title">Join Batu's Steakhouse Community! </span>
+          <br>
+          More than just meat.</h1>
+        <fieldset>
+          <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244"
+                class=" fa fa-user-circle fa-2x"></i></span>
+            Create Account</legend>
+          <div class="social-links-form">
+            <a href="userForms"><i class="fa fa-google fa-2x"></i></a>
+            <a href=""><i class="fa fa-github fa-2x"></i></a>
+            <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+            <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
+          </div>
+          <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
+            <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
+              or
+            </span>
+          </div>
+          <br>
+          <form id="signup_form" novalidate>
+            <p class="isValid">
+              <label for="name">
+                <input type="text" id="username" name="username" placeholder="First Name *" required>
+                <span class="signup_error"></span>
+              </label>
+            </p>
+            <p class="isValid">
+              <label for="last_name">
+                <input type="text" id="last_name" name="last_name" placeholder="Last Name *" required>
+                <span class="signup_error"></span>
+              </label>
+            </p>
+            <p class="isValid">
+              <label for="mail">
+                <input type="email" id="mail_signup" name="mail_signup" placeholder="Your Email *" required>
+                <span class="signup_error"></span>
+              </label>
+            </p>
+            <p class="isValid">
+              <label for="password">
+                <input type="password" id="password_signup" name="password_signup" placeholder="Password *" required>
+                <span class="signup_error"></span>
+              </label>
+            </p>
+            <button class="register-btn"><span>Create New Account</span></button>
+            <script type="text/javascript" src="/scripts/signup-form.js"></script>
+      </div>
+      </form>
+      </fieldset>
+    </div>
+  </div>
+  <!--==============pop-up model===============-->
+
+  <footer class="footer">
+    <div class="footer_container">
+      <div class="row">
+        <div class="footer_column">
+          <h4>Batu Steak House</h4>
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="meal">Meals Package</a></li>
+            <li><a href="#">Grocery</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4>Meals Package</h4>
+          <ul>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Delivery</a></li>
+            <li><a href="#">Order status</a></li>
+            <li><a href="#">Payment options</a></li>
+            <li><a href="#"></a></li>
+          </ul>
+        </div>
+        <div class="footer_column">
+          <h4>follow me</h4>
+          <div class="social-links">
+            <a href="#"><i class="fa fa-terminal "></i></a>
+            <a href="https://github.com/batunpc"><i class="fa fa-github"></i></a>
+            <a href="#"><i class="fa fa-instagram "></i></a>
+            <a href="mailto:batuhanipci@yahoo.com.tr"><i class="fa fa-yahoo "></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</html>
