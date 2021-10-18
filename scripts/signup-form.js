@@ -10,13 +10,13 @@ formSignup.addEventListener('submit', event => {
 });
 
 validateEmail = (email_signup) => {
-	return  /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email_signup);
+  return /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email_signup);
 }
 validateUsername = (username) => {
-  return  /^[a-zA-Z0-9]{3,29}$/.test(username);
+  return /^[a-zA-Z0-9]{3,29}$/.test(username);
 }
 validatePassword = (password_signup) => {
-  return /^[a-z0-9_-].{6,12}$/.test(password_signup);  
+  return /^[a-z0-9_-].{6,12}$/.test(password_signup);
 }
 
 function errorMsg(input, message) {
@@ -41,30 +41,29 @@ validateInput = () => {
     errorMsg(username, 'Name is required')
   else if ((!(/^[A-Z-a-z]{3,29}$/).test(userInput)))
     errorMsg(username, 'Username must be at least 3 characters')
-  else{
+  else {
     successMsg(username)
   };
-//=====
+  //=====
   if (last_nameInput === '')
     errorMsg(last_name, 'Last name is required')
   else {
     successMsg(last_name)
   }
-//=====
+  //=====
   if (emailInput === '')
     errorMsg(email_signup, 'Email is required')
   else if (!(/[^@ \t\r\n]+@[^@ \t\r\n]+/.test(emailInput))) {
     errorMsg(email_signup, 'Please enter a valid email')
   } else {
-      successMsg(email_signup)
+    successMsg(email_signup)
   }
-//=====
+  //=====
   if (passwordInput === '')
     errorMsg(password_signup, 'Password is required')
   else if ((!(/^[a-z-A-Z-0-9]{6,12}$/).test(passwordInput)))
     errorMsg(password_signup, 'Password must be in 6 to 12 characters')
   else {
-      successMsg(password_signup)
-    }
+    successMsg(password_signup)
+  }
 }
-
