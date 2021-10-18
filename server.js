@@ -4,6 +4,7 @@ const HTTP_PORT = process.env.PORT || 8080;
 const path = require("path");
 
 const {check, validationResult} = require("express-validator");
+const { json } = require("body-parser");
 app.use(express.json())
 app.use(express.urlencoded({ extended: true })); //Middleware _aka:bodyparser
 
@@ -27,7 +28,8 @@ app.get("/mealPack", (req, res) => {
 //todo login page & register
 app.post("/userForms", (req , res) => {
   const userFormData = req.body;
-  console.log(userFormData);
+  console.log(res.send(userFormData));
+  console.log(json.stringify(userFormData));
 })
 app.get("/userForms", (req , res, next) => {
   res.status(200).sendFile(path.join(__dirname, "/views/userForms.html"));
@@ -35,8 +37,8 @@ app.get("/userForms", (req , res, next) => {
 });
 
 
-app.get("/dashboard", (req , res) => {
-  res.status(200).sendFile(path.join(__dirname, "/views/dashboard.html"));
+app.get("/user-profile", (req , res) => {
+  res.status(200).sendFile(path.join(__dirname, "/views/user-profile.html"));
 });
 
 //err handling

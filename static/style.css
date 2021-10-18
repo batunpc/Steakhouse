@@ -21,6 +21,7 @@ a {
   color: #eccbbf;
   text-decoration: none;
   position: relative;
+  width: auto;
 }
 
 
@@ -29,7 +30,7 @@ a {
 }
 
 .nav_links li {
-  padding: 0px 35px;
+  padding: 0px 25px;
   display: inline-block;
   text-align: end;
   margin: 10px
@@ -367,11 +368,14 @@ ul {
   flex-wrap: wrap;
   justify-content: end;
 
-  width: 450px;
+  height: auto;
+  min-width: 250px;
+
 }
 
 .navbar_btns>div {
-  margin: 50px;
+  margin: 20px;
+
 }
 
 #login-btn a {

@@ -9,6 +9,15 @@ formSignup.addEventListener('submit', event => {
   validateInput();
 });
 
+validateEmail = (email_signup) => {
+	return  /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email_signup);
+}
+validateUsername = (username) => {
+  return  /^[a-zA-Z0-9]{3,29}$/.test(username);
+}
+validatePassword = (password_signup) => {
+  return /^[a-z0-9_-].{6,12}$/.test(password_signup);  
+}
 
 function errorMsg(input, message) {
   const formControl = input.parentElement;
@@ -21,8 +30,6 @@ function successMsg(input) {
   const formSignup = input.parentElement;
   formSignup.className = 'isValid success';
 }
-
-
 
 validateInput = () => {
   const userInput = username.value.trim();
@@ -46,7 +53,7 @@ validateInput = () => {
 //=====
   if (emailInput === '')
     errorMsg(email_signup, 'Email is required')
-  else if (email_signup.validity.typeMismatch) {
+  else if (!(/[^@ \t\r\n]+@[^@ \t\r\n]+/.test(emailInput))) {
     errorMsg(email_signup, 'Please enter a valid email')
   } else {
       successMsg(email_signup)

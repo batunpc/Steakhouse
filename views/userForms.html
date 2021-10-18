@@ -25,8 +25,8 @@
       </ul>
     </nav>
   </div>
-  <div class="navbar_btns"  id="login-btn" >
-    <div >
+  <div class="navbar_btns" id="login-btn">
+    <div>
       <a href="userForms"> Log in <i class="fa fa-user-circle"></i></a>
       <a href=""> Shop <i class="fa fa-shopping-cart"></i></a>
       <a href=""> Find <i class="fa fa-search"></i></a>
@@ -109,7 +109,7 @@
             </span>
           </div>
           <br>
-          <form id="signup_form" novalidate>
+          <form id="signup_form" action="/user-profile" method="POST" novalidate>
             <p class="isValid">
               <label for="name">
                 <input type="text" id="username" name="username" placeholder="First Name *" required>
@@ -134,8 +134,17 @@
                 <span class="signup_error"></span>
               </label>
             </p>
-            <button class="register-btn"><span>Create New Account</span></button>
+            <button onclick="redirect()" class="register-btn"><span>Create New Account</span></button>
             <script type="text/javascript" src="/scripts/signup-form.js"></script>
+            <script>
+              function redirect() {
+                if (validateUsername(document.getElementById('username').value) &&
+                  validateEmail(document.getElementById('mail_signup').value) &&
+                  validatePassword(document.getElementById('password_signup').value)) {
+                  window.location.href = "/user-profile";
+                }
+              }
+            </script>
       </div>
       </form>
       </fieldset>
