@@ -22,29 +22,34 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<header class="navbar_form">
-  <div>
-    <a href="/"> <img class="logo" src="static/images/logo.png" alt="barbeque logo" />
-    </a>
-  </div>
-  <div>
-    <nav>
+  <!--grid navigation bar -->
+  <header >
+    <nav class="navBar">
+      <div class="brand_logo">
+        <a href="/"> 
+          <img class="logo" src="static/images/logo.png" style="width:150px" alt="Batu's SteakHouse"/>
+        </a>
+      </div>
       <ul class="nav_links">
         <li><a href="/">Home</a></li>
         <li><a href="mealPack">Meals Package</a></li>
         <li><a href="#">Grocery</a></li>
         <li><a href="#">About</a></li>
       </ul>
+      <div class="nav_btns">
+        <li> <a href="userForms"> Log In <i class="fa fa-user-circle"></i></a></li>
+        <li> <a href=""> Shop <i class="fa fa-shopping-cart"></i></a></li>
+        <li> <a href=""> Find <i class="fa fa-search"></i></a></li>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </nav>
-  </div>
-  <div class="navbar_btns"  id="login-btn" >
-    <div >
-      <a href="userForms"> Log in <i class="fa fa-user-circle"></i></a>
-      <a href=""> Shop <i class="fa fa-shopping-cart"></i></a>
-      <a href=""> Find <i class="fa fa-search"></i></a>
-    </div>
-  </div>
-</header>
+    <script src="script.js"></script>
+  </header>
+  <!-- grid navigation bar -->
 
 <body>
   <h1 style="padding: 200px ">Hello User</h1>

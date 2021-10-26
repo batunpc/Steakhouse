@@ -26,30 +26,36 @@
   </head>
 
 <body>
-  <header >
-    <div>
-      <a href="/"> <img class="logo" src="static/images/logo.png" alt="barbeque logo" />
-      </a>
-    </div>
-    <div>
-      <nav>
-        <ul class="nav_links">
-          <li><a href="/">Home</a></li>
-          <li><a href="mealPack">Meals Package</a></li>
-          <li><a href="#">Grocery</a></li>
-          <li><a href="#">About</a></li>
-        </ul>
-      </nav>
-    </div>
-    <div class="navbar_btns"  id="login-btn" >
-      <div >
-        <a href="userForms"> Log in <i class="fa fa-user-circle"></i></a>
-        <a href=""> Shop <i class="fa fa-shopping-cart"></i></a>
-        <a href=""> Find <i class="fa fa-search"></i></a>
+  <!--grid navigation bar -->
+  <header>
+    <nav class="navBar">
+      <div class="brand_logo">
+        <a href="/">
+          <img class="logo" src="static/images/logo.png" style="width:150px" alt="Batu's SteakHouse" />
+        </a>
       </div>
-    </div>
+      <ul class="nav_links">
+        <li><a href="/">Home</a></li>
+        <li><a href="mealPack">Meals Package</a></li>
+        <li><a href="#">Grocery</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+      <div class="nav_btns">
+        <li> <a href="userForms"> Log In <i class="fa fa-user-circle"></i></a></li>
+        <li> <a href=""> Shop <i class="fa fa-shopping-cart"></i></a></li>
+        <li> <a href=""> Find <i class="fa fa-search"></i></a></li>
+      </div>
+      <div class="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </nav>
+    <script src="script.js"></script>
   </header>
-  
+  <!-- grid navigation bar -->
+
+
   <main>
     <!-- figure 1.1-->
     <section id="hero_image_2nd">
@@ -84,7 +90,7 @@
               profile tuned for weight loss.</p>
           </div>
         </div>
-        <br> 
+        <br>
         <div align="center">
           <u class="hoverme">45.9 <i class="fa fa-euro fa-1x"></i></u>
           <div class="hide">2 meals per package</div>

@@ -5,6 +5,15 @@ body {
 
 }
 
+.navBar-login {
+  background-color: #24252a;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: .5fr 1.2fr .7fr;
+  justify-items: center;
+  align-items: center;
+}
+
 .form_container {
   max-width: 320px;
   background: #f4f7f8;

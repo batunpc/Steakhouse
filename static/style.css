@@ -3,84 +3,155 @@
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
 
-body,
-html {
-  line-height: 1.7;
-}
+
 
 * {
   margin: 0;
   padding: 0;
 }
 
+
 li,
 a {
   font-family: 'Poppins', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
   color: #eccbbf;
   text-decoration: none;
   position: relative;
   width: auto;
+  font-size: 20px;
+  font-weight: 800;
 }
 
+/** =========  Grid Navigation Bar  =========  */
+.navBar {
+
+  top: 0;
+  z-index: 1;
+  position: fixed;
+  width: 100%;
+
+  background-color: #24252a;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: .4fr 1.2fr .7fr;
+  justify-items: center;
+  align-items: center;
+}
+
+.brand_logo {
+  justify-self: start;
+  margin: .5em .0em 0em 1em;
+
+}
 
 .nav_links {
-  margin-left: 15px;
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+  font-size: 1.3rem;
+  column-gap: 5rem;
+  justify-self: left;
+  grid-column: 2/3;
+  text-align: center;
+  align-items: center;
+
 }
 
-.nav_links li {
-  padding: 0px 25px;
-  display: inline-block;
-  text-align: end;
-  margin: 10px
-}
-
-
-.nav_links li a:hover {
+.nav_links li>a:hover {
   color: #ff4500;
 }
 
-
-
-header {
-  z-index: 1;
-  top: 0px;
-  width: 100%;
-  transition: top 0.3s;
-  position: fixed;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #24252a;
-  height: 150px
-}
-
-.navbar_form {
-  position: static;
-  top: 0px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #24252a;
-}
-
-.logo {
-  cursor: pointer;
-  height: 150px;
-  box-sizing: border-box;
-  margin: 5% 0 0 10%;
-  display: block;
+.nav_btns {
+  display: grid;
+  grid-auto-flow: column;
+  list-style: none;
+  column-gap: 1.5rem;
+  font-size: 1.4rem;
+  grid-column: 3/4;
 
 }
 
-.UIlogos {
-  position: relative;
-  cursor: pointer;
-  height: 25px;
-  padding: 0px 14px;
+.nav_btns li>a {
+  display: inline-block;
+  border-radius: 15%;
+  transition: all 0.5s ease;
+  white-space: nowrap;
+  padding: 10px;
+  border: solid 1px #eccbbf;
+  text-align: center;
+  line-height: 1px;
+  width: 85px
 }
+
+.nav_btns li>a:hover {
+  color: #24252a;
+  background-color: #eccbbf;
+}
+
+@media screen and (max-width: 1170px) {
+  .navBar {
+    grid-template-columns: .8fr 2fr .5fr;
+  }
+
+  .nav_btns {
+    grid-auto-flow: row;
+    justify-self: right;
+    text-align: center;
+    row-gap: .7em;
+    margin: 20px;
+  }
+}
+
+@media screen and (max-width: 780px) {
+  .navBar {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .brand_logo {
+    display: none;
+  }
+
+  .nav_btns {
+    grid-auto-flow: column;
+  }
+
+  .nav_links {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #eee;
+    z-index: 2;
+    /* new */
+    grid-auto-flow: row;
+    grid-auto-rows: 7rem;
+    align-items: center;
+    clip-path: circle(0px at 90% -10%);
+    -webkit-clip-path: circle(0px at 90% -10%);
+    transition: all 0.5s ease-out;
+  }
+
+  .nav_links.open {
+    clip-path: circle(1200px at 90% -10%);
+    -webkit-clip-path: circle(1000px at 90% -10%);
+  }
+
+  .hamburger {
+    cursor: pointer;
+    justify-self: left;
+    margin-left: 2em;
+    grid-column: 1/2;
+    z-index: 3;
+  }
+
+  .hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: #eccbbf;
+    margin: 5px 0;
+  }
+}
+
+/** =========  Grid Navigation Bar  =========  */
 
 
 /* hero section*/
@@ -138,6 +209,7 @@ header {
 
 #hero_image button,
 #hero_image_2nd button {
+  font-size: 18px;
   top: 77%;
   margin-left: 70%;
   text-align: center;
@@ -146,7 +218,7 @@ header {
   border: 0;
   border-radius: 200px;
   position: absolute;
-  color: bisque;
+  color: white;
   background-color: #f17244;
 }
 
@@ -355,47 +427,6 @@ ul {
   transition: all 0.5s ease;
   font-weight: 100px;
   margin-right: 10px;
-}
-
-.navbar_links {
-  display: inline;
-}
-
-.navbar_btns {
-  display: flex;
-  flex-direction: row;
-  overflow-wrap: wrap;
-  flex-wrap: wrap;
-  justify-content: end;
-
-  height: auto;
-  min-width: 250px;
-
-}
-
-.navbar_btns>div {
-  margin: 20px;
-
-}
-
-#login-btn a {
-  display: inline-block;
-  text-align: center;
-  border-radius: 15%;
-  transition: all 0.5s ease;
-  white-space: nowrap;
-  padding: 10px;
-  border: solid 1px #eccbbf;
-  margin: 10px;
-  height: 17px;
-  text-align: center;
-  line-height: 1px
-}
-
-
-#login-btn a:hover {
-  color: #24252a;
-  background-color: #eccbbf;
 }
 
 .social-links a:hover {
