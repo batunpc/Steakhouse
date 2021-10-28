@@ -1,15 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
-
-
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
 
 * {
   margin: 0;
   padding: 0;
 }
-
 
 li,
 a {
@@ -26,7 +23,7 @@ a {
 .navBar {
 
   top: 0;
-  z-index: 1;
+  z-index: 999;
   position: fixed;
   width: 100%;
 
@@ -154,87 +151,130 @@ a {
 /** =========  Grid Navigation Bar  =========  */
 
 
-/* hero section*/
-#hero_image {
-  padding: 11%;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.731),
+/** =========  Hero Section  =========  */
+.hero {
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  color: #CCC;
+  position: relative;
+  text-transform: uppercase;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 17.5px;
+}
+
+
+
+.hero-one {
+  top: 0;
+  position: absolute;
+  width: 60%;
+  background-color: black;
+  height: 100vh;
+  clip-path: polygon(0 0, 60vw 0, 40vw 100vh, 0 100vh);
+  z-index: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.47),
+      rgba(0, 0, 0, 0.601)),
+    url("images/hero-one.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
+.hero-two {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  background-color: #24252a;
+  height: 100vh;
+
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)),
+    url("images/hero-two.jpg");
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.hero-three {
+  top: 0;
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  height: 100vh;
+  z-index: 1;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.47),
       rgba(0, 0, 0, 0.601)),
     url("images/steakHero.jpg");
-  height: 300px;
-  background-position: center;
+
   background-size: cover;
-  position: relative;
-  ;
+  background-repeat: no-repeat;
+  background-position: bottom;
 }
 
-#hero_image_2nd {
-  padding: 11%;
-  background-image: linear-gradient(rgba(0.4, 0.5, 0, 0.8),
-      rgba(0.4, 0.5, 0, 0.7)),
-    url("images/herosteak2nd.jpg");
-  height: 300px;
-  background-position: center;
-  background-size: cover;
-  position: relative;
-  ;
-}
 
-#hero_text {
+
+.header-title {
+  z-index: 2;
   position: absolute;
-  color: #ff4500;
-  font-size: 2.1vw;
-  top: 45%;
-  right: 5%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.header-title-mealpac {
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 77%;
+  letter-spacing: 2px;
+  font-size: 50px;
+  transform: translate(-50%, -70%);
+
+}
+
+.header-primary {
+  font-size: 2em;
+  display: block;
+  font-weight: 700;
+}
+
+/* hero button */
+.fill-btn {
+  z-index: 10;
+  top: 72%;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 4px solid #eccbbf;
   cursor: pointer;
-  text-align: center;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
 }
 
-#hero_text p {
-  color: #f17244;
-}
-
-#hero_text_2nd {
+.fill-btn::after {
+  content: "";
+  background-color: #24252a;
+  width: 100%;
+  z-index: -1;
   position: absolute;
-  color: #ff4500;
-  font-size: 2.1vw;
-  top: 45%;
-  right: 5%;
-  cursor: pointer;
-  text-align: center;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
 }
 
-#hero_text_2nd p {
-  color: #f17244;
+.fill-btn:hover::after {
+  top: 0px;
+  left: 0px;
 }
 
-#hero_image button,
-#hero_image_2nd button {
-  font-size: 18px;
-  top: 77%;
-  margin-left: 70%;
-  text-align: center;
-  line-height: 13px;
-  padding: 1vw;
-  border: 0;
-  border-radius: 200px;
-  position: absolute;
-  color: white;
-  background-color: #f17244;
-}
-
-#hero_image button:hover,
-#hero_image_2nd button:hover {
-  background-color: #ff4500;
-  color: bisque;
-  transition: all 0.3s ease;
-
-}
-
-#hero_image button:active,
-#hero_image_2nd button:active {
-  box-shadow: 0 5px #666;
-  transform: translateY(3px);
-}
+/** =========  Hero Section  =========  */
 
 /*content section */
 
@@ -251,21 +291,7 @@ a {
   color: #eccbbf;
 }
 
-.contentsec_mealpac {
-  display: flex;
-  font-family: 'Architects Daughter', cursive;
 
-  justify-content: center;
-  background-color: #24252a;
-  padding: 45px;
-}
-
-.contentext_mealpac {
-  font-family: 'Architects Daughter', cursive;
-  font-size: 32px;
-  color: #ff4500;
-  text-align: center;
-}
 
 /*---*/
 
