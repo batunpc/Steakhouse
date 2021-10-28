@@ -26,11 +26,11 @@ app.get("/mealPack", (req, res) => {
 });
 
 //todo login page & register
-app.post("/userForms", (req , res) => {
+/* app.post("/userForms", (req , res) => {
   const userFormData = req.body;
   console.log(res.send(userFormData));
   console.log(json.stringify(userFormData));
-})
+}) */
 app.get("/userForms", (req , res, next) => {
   res.status(200).sendFile(path.join(__dirname, "/views/userForms.html"));
 

@@ -68,7 +68,6 @@ body {
 .form_container input[type="email"]:focus,
 .form_container input[type="password"]:focus {
   box-shadow: 0 0 10px #f17244;
-  border: 1px solid #f17244;
 }
 
 ::placeholder {
