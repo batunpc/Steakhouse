@@ -17,10 +17,11 @@ body {
 .form_container {
   max-width: 320px;
   background: #f4f7f8;
-  margin: 70px auto;
-  padding: 25px 40px;
+  margin: 50px auto;
+  padding: 25px 45px;
   background-color: #24252a;
   border-radius: 20px;
+
   font-family: 'Poppins', sans-serif;
 }
 
@@ -38,8 +39,8 @@ body {
 
 .form_container p>label {
   display: block;
-  margin-bottom: 20px;
-  padding: 12px;
+  margin-top: 27px;
+  padding: 12px 12px 0 12px;
   font-family: 'Poppins', sans-serif;
 }
 
@@ -75,26 +76,31 @@ body {
   opacity: 1;
 }
 
+
 .error.active {
-  font-size: 82%;
+  font-size: 92%;
+
   font-style: italic;
-  color: white;
-  background-color: #900;
+  font-weight: bold;
+  color: #D8000C;
   border-radius: 0px 0 20px 6px;
   box-sizing: border-box;
   float: right;
-  padding: 10px;
-  margin: 0;
+  padding: 7px;
+  margin-right: 12px;
 }
+
+
 
 #log-in-btn {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 32px 12px;
+  margin: 50px 12px 20px;
   padding: 10px 20px;
-  font-size: 15px;
+  font-size: 17px;
+  font-weight: 800;
   cursor: pointer;
   outline: none;
   color: #ffff;

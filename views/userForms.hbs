@@ -23,36 +23,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
-<!--grid navigation bar -->
-<header>
-  <nav class="navBar-login">
-    <div class="brand_logo">
-      <a href="/">
-        <img class="logo" src="static/images/logo.png" style="width:150px" alt="Batu's SteakHouse" />
-      </a>
-    </div>
-    <ul class="nav_links">
-      <li><a href="/">Home</a></li>
-      <li><a href="mealPack">Meals Package</a></li>
-      <li><a href="#">Grocery</a></li>
-      <li><a href="#">About</a></li>
-    </ul>
-    <div class="nav_btns">
-      <li> <a href="userForms"> Log In <i class="fa fa-user-circle"></i></a></li>
-      <li> <a href=""> Shop <i class="fa fa-shopping-cart"></i></a></li>
-      <li> <a href=""> Find <i class="fa fa-search"></i></a></li>
-    </div>
-    <div class="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </nav>
-  <script src="script.js"></script>
-</header>
-<!-- grid navigation bar -->
-
-
 <body>
   <div class="form_container">
     <fieldset>
@@ -73,28 +43,36 @@
       </div>
       <br>
 
-      <form class="login_form" novalidate>
-        <p>
-          <label for="mail">
-            <input type="email" id="mail" name="mail" placeholder="Your Email *" required>
-            <span class="error"></span>
-          </label>
-        </p>
-        <p>
-          <label for="password">
-            <input type="password" id="password" name="password" placeholder="Password *" required>
-            <span class="error"></span>
-          </label>
-        </p>
-        <button id="log-in-btn"><b>Log In</b></button>
-        <script src="/scripts/login-form.js"></script>
 
+      <form method="POST" action="/userForms">
+        <p>
+          <label for="email">
+            <input type="email" id="email" name="email" placeholder="Your Email *" value="{{data.email}}" />
+          </label>
+        </p>
+        {{#if errorMsgs}}
+        <div class="error active">
+          <span class="error"> {{emailError}}</span>
+        </div>
+        {{/if}}
+
+        <p>
+          <label for="password" style="margin-top: 40px">
+            <input type="password" id="password" name="password" placeholder=" Password *  "
+              value="{{data.password}}" />
+          </label>
+        </p>
+        {{#if errorMsgs}}
+        <div class="error active">
+          <span class="error">{{passwordError}}</span>
+        </div>
+        {{/if}}
+        <button type="submit" id="log-in-btn"> <span>Log in</span></button>
         <div style="width: 100%; border-top: 1px solid #eccbbf; text-align: center;">
         </div>
       </form>
     </fieldset>
     <button class="register-btn"><a href="#open"><span>Create New Account</span> </a></button>
-
   </div>
 
 
@@ -111,7 +89,8 @@
       <div class="form_container">
         <h1 id="modal-img-text"> <span id="modal-img-text-title">Join Batu's Steakhouse Community! </span>
           <br>
-          More than just meat.</h1>
+          More than just meat.
+        </h1>
         <fieldset>
           <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244"
                 class=" fa fa-user-circle fa-2x"></i></span>
@@ -153,57 +132,15 @@
                 <span class="signup_error"></span>
               </label>
             </p>
-            <button onclick="redirect()" class="register-btn"><span>Create New Account</span></button>
+            <button class="register-btn"><span>Create New Account</span></button>
             <script type="text/javascript" src="/scripts/signup-form.js"></script>
-            <script>
-              function redirect() {
-                if (validateUsername(document.getElementById('username').value) &&
-                  validateEmail(document.getElementById('mail_signup').value) &&
-                  validatePassword(document.getElementById('password_signup').value)) {
-                  window.location.href = "/user-profile";
-                }
-              }
-            </script>
+
       </div>
       </form>
       </fieldset>
     </div>
   </div>
-  <!--==============pop-up model===============-->
 
-  <footer class="footer">
-    <div class="footer_container">
-      <div class="row">
-        <div class="footer_column">
-          <h4>Batu Steak House</h4>
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="meal">Meals Package</a></li>
-            <li><a href="#">Grocery</a></li>
-            <li><a href="#">About</a></li>
-          </ul>
-        </div>
-        <div class="footer_column">
-          <h4>Meals Package</h4>
-          <ul>
-            <li><a href="#">FAQ</a></li>
-            <li><a href="#">Delivery</a></li>
-            <li><a href="#">Order status</a></li>
-            <li><a href="#">Payment options</a></li>
-            <li><a href="#"></a></li>
-          </ul>
-        </div>
-        <div class="footer_column">
-          <h4>follow me</h4>
-          <div class="social-links">
-            <a href="#"><i class="fa fa-terminal "></i></a>
-            <a href="https://github.com/batunpc"><i class="fa fa-github"></i></a>
-            <a href="#"><i class="fa fa-instagram "></i></a>
-            <a href="mailto:batuhanipci@yahoo.com.tr"><i class="fa fa-yahoo "></i></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+  <!--==============pop-up model===============-->
 
 </html>

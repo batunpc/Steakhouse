@@ -382,10 +382,6 @@ figure img:hover {
   color: #eccbbf;
 }
 
-.footer_container {
-  max-width: 1170px;
-  margin: auto;
-}
 
 .row {
   display: flex;
@@ -396,10 +392,17 @@ ul {
   list-style: none;
 }
 
+
+.footer_container {
+  max-width: 1170px;
+  margin: auto;
+}
+
 .footer {
   font-family: 'Poppins', sans-serif;
   background-color: #24252a;
-  padding: 77px 0;
+  padding: 95px;
+  bottom: 0;
 }
 
 .footer_column {
@@ -441,11 +444,15 @@ ul {
 
 }
 
+.social-links i {
+  line-height: 2.4em;
+
+}
+
 .social-links a {
   display: inline-block;
   height: 50px;
   width: 50px;
-  line-height: 50px;
   background-color: #27282c;
   text-align: center;
   color: #ffff;
