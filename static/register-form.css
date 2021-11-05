@@ -16,7 +16,10 @@
   -moz-transition: opacity 400ms ease-in;
   transition: opacity 400ms ease-in;
   pointer-events: none;
+}
 
+#signup_form {
+  height: 420px;
 }
 
 .modalBox:target {

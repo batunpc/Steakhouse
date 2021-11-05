@@ -1,21 +1,36 @@
 const form = document.querySelector('.login_form');
 
-const email = document.getElementById('email');
+const email = document.getElementById('mail');
 const password = document.getElementById('password');
 
-const emailError = document.querySelector('#email + span.error');
+const emailError = document.querySelector('#mail + span.error');
 const passwordError = document.querySelector('#password + span.error');
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  showError();
-});
 
+email.addEventListener('input', (email, password) => {
+  if (email.validity.valid && password.validity.valid) {
+    emailError.innerHTML = '';
+    emailError.className = 'error';
+
+    passwordError.innerHTML = '';
+    passwordError.className = 'error';
+  } else showError();
+});    
+
+form.addEventListener('submit', (event) => {
+  if (!email.validity.valid) {
+    showError();
+    event.preventDefault();
+  } else if (!password.validity.valid) {
+    showError();
+    event.preventDefault();
+  }
+});
 
 
 showError = () => {
   if (email.validity.valueMissing && password.validity.valueMissing) {
-    emailError.textContent = 'Please enter e-mail address.';
+    emailError.textContent = 'Please enter an e-mail address.';
     passwordError.textContent = 'Forgot your password ?';
     emailError.className = 'error active';
     passwordError.className = 'error active';
@@ -29,4 +44,5 @@ showError = () => {
     passwordError.textContent = 'Forgot your password ?';
     passwordError.className = 'error active';
   }
-} 
+
+}

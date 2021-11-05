@@ -45,7 +45,7 @@ body {
 }
 
 .form_container input[id="username"],
-.form_container input[id="last_name"],
+.form_container input[id="lastname"],
 .form_container input[type="email"],
 .form_container input[type="password"] {
   -webkit-appearance: none;
@@ -65,7 +65,7 @@ body {
 }
 
 .form_container input[id="username"]:focus,
-.form_container input[id="last_name"]:focus,
+.form_container input[id="lastname"]:focus,
 .form_container input[type="email"]:focus,
 .form_container input[type="password"]:focus {
   box-shadow: 0 0 10px #f17244;
@@ -78,16 +78,16 @@ body {
 
 
 .error.active {
-  font-size: 92%;
-
+  font-size: 70%;
+  background-color: #900;
   font-style: italic;
-  font-weight: bold;
-  color: #D8000C;
+  font-weight: 700;
+  color: #fff;
   border-radius: 0px 0 20px 6px;
   box-sizing: border-box;
   float: right;
   padding: 7px;
-  margin-right: 12px;
+
 }
 
 

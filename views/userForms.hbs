@@ -42,39 +42,28 @@
         </span>
       </div>
       <br>
-
-
-      <form method="POST" action="/userForms">
+      <form class="login_form" novalidate>
         <p>
-          <label for="email">
-            <input type="email" id="email" name="email" placeholder="Your Email *" value="{{data.email}}" />
+          <label for="mail">
+            <input type="email" id="mail" name="mail" placeholder="Your Email *" required>
+            <span class="error"></span>
           </label>
         </p>
-        {{#if errorMsgs}}
-        <div class="error active">
-          <span class="error"> {{emailError}}</span>
-        </div>
-        {{/if}}
-
         <p>
-          <label for="password" style="margin-top: 40px">
-            <input type="password" id="password" name="password" placeholder=" Password *  "
-              value="{{data.password}}" />
+          <label for="password">
+            <input type="password" id="password" name="password" placeholder="Password *" required>
+            <span class="error"></span>
           </label>
         </p>
-        {{#if errorMsgs}}
-        <div class="error active">
-          <span class="error">{{passwordError}}</span>
-        </div>
-        {{/if}}
-        <button type="submit" id="log-in-btn"> <span>Log in</span></button>
+        <button type="submit" id="log-in-btn"><b>Log In</b></button>
+        <script src="/scripts/login-form.js"></script>
+
         <div style="width: 100%; border-top: 1px solid #eccbbf; text-align: center;">
         </div>
       </form>
     </fieldset>
     <button class="register-btn"><a href="#open"><span>Create New Account</span> </a></button>
   </div>
-
 
   <!--============== pop-up model ===============-->
   <div id="open" class="modalBox">
@@ -107,32 +96,33 @@
             </span>
           </div>
           <br>
-          <form id="signup_form" action="/user-profile" method="POST" novalidate>
+          <form id="signup_form" method="POST" novalidate>
             <p class="isValid">
               <label for="name">
-                <input type="text" id="username" name="username" placeholder="First Name *" required>
+                <input type="text" id="username" name="username" placeholder="First Name *" value="{{data.username}}">
                 <span class="signup_error"></span>
               </label>
             </p>
             <p class="isValid">
-              <label for="last_name">
-                <input type="text" id="last_name" name="last_name" placeholder="Last Name *" required>
+              <label for="lastname">
+                <input type="text" id="lastname" name="lastname" placeholder="Last Name *" value="{{data.lastname}}">
                 <span class="signup_error"></span>
               </label>
             </p>
             <p class="isValid">
-              <label for="mail">
-                <input type="email" id="mail_signup" name="mail_signup" placeholder="Your Email *" required>
+              <label for="mail_signup">
+                <input type="email" id="email" name="email" placeholder="Your Email *" value="{{data.email}}" />
                 <span class="signup_error"></span>
               </label>
             </p>
             <p class="isValid">
-              <label for="password">
-                <input type="password" id="password_signup" name="password_signup" placeholder="Password *" required>
+              <label for="password_signup">
+                <input type="password" id="password_signup" name="password_signup" placeholder="Password *"
+                  value="{{data.password_signup}}">
                 <span class="signup_error"></span>
               </label>
             </p>
-            <button class="register-btn"><span>Create New Account</span></button>
+            <button type="submit" class="register-btn"><span>Create New Account</span></button>
             <script type="text/javascript" src="/scripts/signup-form.js"></script>
 
       </div>

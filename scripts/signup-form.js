@@ -1,12 +1,15 @@
 const formSignup = document.getElementById('signup_form');
 const username = document.getElementById('username');
-const last_name = document.getElementById('last_name');
-const email_signup = document.getElementById('mail_signup');
+const lastname = document.getElementById('lastname');
+const email_signup = document.getElementById('email');
 const password_signup = document.getElementById('password_signup');
 
-formSignup.addEventListener('submit', event => {
+formSignup.addEventListener('submit', event => {  
   event.preventDefault();
   validateInput();
+  if (Auth) {
+    event.currentTarget.submit();
+  } 
 });
 
 validateEmail = (email_signup) => {
@@ -31,39 +34,61 @@ function successMsg(input) {
   formSignup.className = 'isValid success';
 }
 
+var Auth;
+
 validateInput = () => {
+
   const userInput = username.value.trim();
-  const last_nameInput = last_name.value.trim();
+  const lastnameInput = lastname.value.trim();
   const passwordInput = password_signup.value.trim();
   const emailInput = email_signup.value.trim();
 
-  if (userInput === '')
+
+  if (userInput === ''){
     errorMsg(username, 'Name is required')
-  else if ((!(/^[A-Z-a-z]{3,29}$/).test(userInput)))
+    Auth = false
+  }
+  else if ((!(/^[A-Z-a-z]{3,29}$/).test(userInput))){
     errorMsg(username, 'Username must be at least 3 characters')
+    Auth = false
+  }
   else {
     successMsg(username)
+    Auth = true;
   };
   //=====
-  if (last_nameInput === '')
-    errorMsg(last_name, 'Last name is required')
+  if (lastnameInput === ''){
+    errorMsg(lastname, 'Last name is required')
+    Auth = false
+  }
   else {
-    successMsg(last_name)
+    successMsg(lastname)
   }
   //=====
-  if (emailInput === '')
+  if (emailInput === ''){
     errorMsg(email_signup, 'Email is required')
+    Auth = false
+  }
   else if (!(/[^@ \t\r\n]+@[^@ \t\r\n]+/.test(emailInput))) {
     errorMsg(email_signup, 'Please enter a valid email')
+    Auth = false
   } else {
     successMsg(email_signup)
+    Auth = true;
   }
   //=====
-  if (passwordInput === '')
+  if (passwordInput === ''){
     errorMsg(password_signup, 'Password is required')
-  else if ((!(/^[a-z-A-Z-0-9]{6,12}$/).test(passwordInput)))
+    Auth = false
+  } 
+  else if ((!(/^[a-z-A-Z-0-9]{6,12}$/).test(passwordInput))){
     errorMsg(password_signup, 'Password must be in 6 to 12 characters')
+    Auth = false
+  }
   else {
     successMsg(password_signup)
+    Auth = true;
   }
+
+  return Auth;
 }
