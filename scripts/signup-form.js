@@ -4,13 +4,6 @@ const lastname = document.getElementById('lastname');
 const email_signup = document.getElementById('email');
 const password_signup = document.getElementById('password_signup');
 
-formSignup.addEventListener('submit', event => {  
-  event.preventDefault();
-  validateInput();
-  if (Auth) {
-    event.currentTarget.submit();
-  } 
-});
 
 validateEmail = (email_signup) => {
   return /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email_signup);
@@ -22,19 +15,29 @@ validatePassword = (password_signup) => {
   return /^[a-z0-9_-].{6,12}$/.test(password_signup);
 }
 
-function errorMsg(input, message) {
+
+formSignup.addEventListener('submit', event => {  
+  event.preventDefault();
+  validateInput();
+  if (validateUsername(document.getElementById('username').value) &&
+    validateEmail(document.getElementById('email').value) &&
+    validatePassword(document.getElementById('password_signup').value)) {
+      event.currentTarget.submit();
+  }
+});
+
+
+errorMsg = (input, message) => {
   const formControl = input.parentElement;
   const span = formControl.querySelector('span');
   formControl.className = 'isValid error';
   span.innerText = message;
 }
 
-function successMsg(input) {
+successMsg=(input) =>{
   const formSignup = input.parentElement;
   formSignup.className = 'isValid success';
 }
-
-var Auth;
 
 validateInput = () => {
 
@@ -43,52 +46,41 @@ validateInput = () => {
   const passwordInput = password_signup.value.trim();
   const emailInput = email_signup.value.trim();
 
-
-  if (userInput === ''){
+  if (userInput === '')
     errorMsg(username, 'Name is required')
-    Auth = false
-  }
-  else if ((!(/^[A-Z-a-z]{3,29}$/).test(userInput))){
+  else if ((!(/^[A-Z-a-z]{3,29}$/).test(userInput)))
     errorMsg(username, 'Username must be at least 3 characters')
-    Auth = false
-  }
-  else {
+  else 
     successMsg(username)
-    Auth = true;
-  };
   //=====
-  if (lastnameInput === ''){
+  if (lastnameInput === '')
     errorMsg(lastname, 'Last name is required')
-    Auth = false
-  }
-  else {
+  else 
     successMsg(lastname)
-  }
   //=====
-  if (emailInput === ''){
+  if (emailInput === '')
     errorMsg(email_signup, 'Email is required')
-    Auth = false
-  }
-  else if (!(/[^@ \t\r\n]+@[^@ \t\r\n]+/.test(emailInput))) {
+  else if (!(/[^@ \t\r\n]+@[^@ \t\r\n]+/.test(emailInput))) 
     errorMsg(email_signup, 'Please enter a valid email')
-    Auth = false
-  } else {
+  else 
     successMsg(email_signup)
-    Auth = true;
-  }
   //=====
-  if (passwordInput === ''){
+  if (passwordInput === '')
     errorMsg(password_signup, 'Password is required')
-    Auth = false
-  } 
-  else if ((!(/^[a-z-A-Z-0-9]{6,12}$/).test(passwordInput))){
+  else if ((!(/^[a-z-A-Z-0-9]{6,12}$/).test(passwordInput)))
     errorMsg(password_signup, 'Password must be in 6 to 12 characters')
-    Auth = false
-  }
-  else {
+  else 
     successMsg(password_signup)
-    Auth = true;
-  }
+  
+}
 
-  return Auth;
+function ResetForm() {
+  //resets the input data
+  document.getElementById("signup_form").reset();
+  //resets the err messages
+  successMsg(username)
+  successMsg(lastname)
+  successMsg(email_signup)
+  successMsg(password_signup)
+
 }

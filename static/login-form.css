@@ -34,7 +34,7 @@ body {
   margin-bottom: 20px;
   text-align: center;
   display: flex;
-  color: #ffff
+  color: #ffff;
 }
 
 .form_container p>label {

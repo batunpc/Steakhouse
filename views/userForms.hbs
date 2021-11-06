@@ -68,7 +68,7 @@
   <!--============== pop-up model ===============-->
   <div id="open" class="modalBox">
     <div>
-      <p><a class="close" title="Close" href="#close" rel="nofollow">&times;</a></p>
+      <p><a class="close" title="Close" onclick="ResetForm()" id="closeMe" href="#close" rel="nofollow">&times;</a></p>
       <div class="modal-left">
         <img id="modal-img-left" src="static/svg/modal-right.svg" alt="">
       </div>
@@ -95,7 +95,6 @@
               or
             </span>
           </div>
-          <br>
           <form id="signup_form" method="POST" novalidate>
             <p class="isValid">
               <label for="name">

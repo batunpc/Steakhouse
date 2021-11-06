@@ -18,13 +18,13 @@ router.get('/',(req,res) =>
   .catch(err => console.log(err)) 
 ); 
 
-//add users
+//add users -register
 router.post('/', 
 [  
-  check("username").notEmpty(),
+  check("username").notEmpty().matches("/^[a-zA-Z0-9]{3,20}$/").isLength({min:3, max:20}),
   check("lastname").notEmpty(),
-  check("email").notEmpty(),
-  check("password_signup").notEmpty(),
+  check("email").notEmpty().matches("/[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/"),
+  check("password_signup").notEmpty("/^[a-z0-9_-].{6,12}$/").isLength({min:6, max:12})
 ], 
   (req,res) =>{
     var userLoginData = {
@@ -33,7 +33,6 @@ router.post('/',
       email: req.body.email,
       password_signup: req.body.password_signup,
     };
-  let {username, lastname, email , password_signup} =req.body;
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     res.render("userForms", {
