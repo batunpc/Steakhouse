@@ -6,22 +6,22 @@ const password_signup = document.getElementById('password_signup');
 
 
 validateEmail = (email_signup) => {
-  return /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email_signup);
+  return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(email_signup);
 }
 validateUsername = (username) => {
-  return /^[a-zA-Z0-9]{3,29}$/.test(username);
+  return /^[a-z0-9_-]{3,15}$/.test(username);
 }
 validatePassword = (password_signup) => {
-  return /^[a-z0-9_-].{6,12}$/.test(password_signup);
+  return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/.test(password_signup);
 }
 
 
 formSignup.addEventListener('submit', event => {  
   event.preventDefault();
   validateInput();
-  if (validateUsername(document.getElementById('username').value) &&
-    validateEmail(document.getElementById('email').value) &&
-    validatePassword(document.getElementById('password_signup').value)) {
+  if (validateUsername(username.value) &&
+    validateEmail(email_signup.value) &&
+    validatePassword(password_signup.value)) {
       event.currentTarget.submit();
   }
 });
@@ -40,15 +40,14 @@ successMsg=(input) =>{
 }
 
 validateInput = () => {
-
-  const userInput = username.value.trim();
+  const usernameInput = username.value.trim();
   const lastnameInput = lastname.value.trim();
   const passwordInput = password_signup.value.trim();
   const emailInput = email_signup.value.trim();
 
-  if (userInput === '')
-    errorMsg(username, 'Name is required')
-  else if ((!(/^[A-Z-a-z]{3,29}$/).test(userInput)))
+  if (usernameInput === '')
+    errorMsg(username, 'Username is required')
+  else if (!(validateUsername(usernameInput)))
     errorMsg(username, 'Username must be at least 3 characters')
   else 
     successMsg(username)
@@ -60,21 +59,23 @@ validateInput = () => {
   //=====
   if (emailInput === '')
     errorMsg(email_signup, 'Email is required')
-  else if (!(/[^@ \t\r\n]+@[^@ \t\r\n]+/.test(emailInput))) 
-    errorMsg(email_signup, 'Please enter a valid email')
+  else if (!(validateEmail(emailInput))) 
+    errorMsg(email_signup, 'not a valid email')
   else 
     successMsg(email_signup)
   //=====
   if (passwordInput === '')
     errorMsg(password_signup, 'Password is required')
-  else if ((!(/^[a-z-A-Z-0-9]{6,12}$/).test(passwordInput)))
-    errorMsg(password_signup, 'Password must be in 6 to 12 characters')
+  else if((passwordInput.length < 6))
+    errorMsg(password_signup, 'Password must be at least 6 characters')
+  else if (!(validatePassword(passwordInput)))
+    errorMsg(password_signup, 'Password must contain uppercase,\nlowercase letters with digit(s)')
   else 
     successMsg(password_signup)
-  
 }
 
-function ResetForm() {
+//closes the registration form and resets data
+ResetForm = () => {
   //resets the input data
   document.getElementById("signup_form").reset();
   //resets the err messages
@@ -82,5 +83,4 @@ function ResetForm() {
   successMsg(lastname)
   successMsg(email_signup)
   successMsg(password_signup)
-
 }

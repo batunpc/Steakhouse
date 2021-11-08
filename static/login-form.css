@@ -39,7 +39,7 @@ body {
 
 .form_container p>label {
   display: block;
-  margin-top: 27px;
+  margin-top: 30px;
   padding: 12px 12px 0 12px;
   font-family: 'Poppins', sans-serif;
 }
@@ -59,7 +59,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   outline: none;
-  border-radius: 0px 10px 0px 15px;
+  border-radius: 0px 20px 0px 15px;
   padding: 12px;
   background-color: #eccbbf
 }
@@ -78,10 +78,10 @@ body {
 
 
 .error.active {
-  font-size: 70%;
+  font-size: 80%;
   background-color: #900;
   font-style: italic;
-  font-weight: 700;
+
   color: #fff;
   border-radius: 0px 0 20px 6px;
   box-sizing: border-box;
@@ -97,7 +97,7 @@ body {
   text-align: center;
   justify-content: center;
   align-items: center;
-  margin: 50px 12px 20px;
+  margin: 40px 12px 20px;
   padding: 10px 20px;
   font-size: 17px;
   font-weight: 800;

@@ -1,6 +1,6 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const {check,validationResult} = require("express-validator");
+const session = require('express-session');
 
 const server = express();
 //Static Files
@@ -20,6 +20,7 @@ db
 });
 
 // data parsing middleware
+// Parse application/x-www-form-urlencoded
 server.use(express.urlencoded({extended: false}));
 server.use(express.json());
 
@@ -30,10 +31,16 @@ server.engine(".hbs", exphbs({
   defaultLayout: "main"
 }));
 
+//setup express-session
+server.use(session({
+  secret: "seneca_webassign4&5_coffee_octopus",
+  resave: false,
+  saveUninitialized: true
+}));
+
+
 // User routes
 server.use('/userForms', require('./routes/users'))
-
-
 
 //home
 server.get("/", (req, res) => {

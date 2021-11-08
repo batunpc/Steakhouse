@@ -41,7 +41,7 @@
           or
         </span>
       </div>
-      <br>
+
       <form class="login_form" novalidate>
         <p>
           <label for="mail">
@@ -114,6 +114,12 @@
                 <span class="signup_error"></span>
               </label>
             </p>
+            {{#if registerErr}}
+            {{#each registerErr}}
+            <span class="error">{{this.msg}}</span>
+            {{/each}}
+            {{/if}}
+
             <p class="isValid">
               <label for="password_signup">
                 <input type="password" id="password_signup" name="password_signup" placeholder="Password *"
