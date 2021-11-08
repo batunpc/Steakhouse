@@ -135,7 +135,7 @@
 }
 
 /* only for email duplicate error */
-span.error {
+span.error_emailDpl {
   font-size: 80%;
   font-style: italic;
   margin-left: 17px;
