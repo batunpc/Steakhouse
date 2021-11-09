@@ -1,6 +1,5 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
-const session = require('express-session');
 
 const server = express();
 //Static Files
@@ -29,13 +28,6 @@ server.set('view engine', ".hbs");
 server.engine(".hbs", exphbs({
   extname: ".hbs",
   defaultLayout: "main"
-}));
-
-//setup express-session
-server.use(session({
-  secret: "seneca_webassign4&5_coffee_octopus",
-  resave: false,
-  saveUninitialized: true
 }));
 
 

@@ -51,6 +51,8 @@ body {
   -webkit-appearance: none;
   appearance: none;
   border: none;
+  display: block;
+  font-family: inherit;
 
   box-sizing: border-box;
   width: 100%;
@@ -60,7 +62,7 @@ body {
   -moz-box-sizing: border-box;
   outline: none;
   border-radius: 0px 20px 0px 15px;
-  padding: 12px;
+  padding: 10px;
   background-color: #eccbbf
 }
 
@@ -78,15 +80,14 @@ body {
 
 
 .error.active {
-  font-size: 80%;
-  background-color: #900;
+  font-weight: 700;
+  font-size: 12px;
   font-style: italic;
 
-  color: #fff;
-  border-radius: 0px 0 20px 6px;
-  box-sizing: border-box;
+  color: #cc0000;
+
   float: right;
-  padding: 7px;
+  padding: 5px 10px 0px 5px;
 
 }
 

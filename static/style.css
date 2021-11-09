@@ -402,7 +402,8 @@ ul {
   font-family: 'Poppins', sans-serif;
   background-color: #24252a;
   padding: 95px;
-  bottom: 0;
+  bottom: 0px;
+  margin-bottom: 0px;
 }
 
 .footer_column {

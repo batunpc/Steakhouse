@@ -1,48 +1,57 @@
-const form = document.querySelector('.login_form');
+const formSignIn = document.getElementById('login_form');
 
-const email = document.getElementById('mail');
-const password = document.getElementById('password');
+const email_signIn = document.getElementById('mail');
+const password_signIn = document.getElementById('password');
 
 const emailError = document.querySelector('#mail + span.error');
 const passwordError = document.querySelector('#password + span.error');
 
 
-email.addEventListener('input', (email, password) => {
-  if (email.validity.valid && password.validity.valid) {
-    emailError.innerHTML = '';
-    emailError.className = 'error';
+validateEmail = (email_signIn) => {
+  return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(email_signIn);
+}
+validatePassword = (password_signIn) => {
+  return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/.test(password_signIn);
+}
 
-    passwordError.innerHTML = '';
-    passwordError.className = 'error';
-  } else showError();
-});    
-
-form.addEventListener('submit', (event) => {
-  if (!email.validity.valid) {
-    showError();
-    event.preventDefault();
-  } else if (!password.validity.valid) {
-    showError();
-    event.preventDefault();
+formSignIn.addEventListener('submit', event => {  
+  event.preventDefault();
+  validateLogin();
+  if (validateEmail(email_signIn.value) &&
+    validatePassword(password_signIn.value)) {
+      event.currentTarget.submit();
   }
 });
 
+errorMsg = (input, message) => {
+  const formControl = input.parentElement;
+  const span = formControl.querySelector('span');
+  formControl.className = 'isValid error';
+  span.innerText = message;
+}
 
-showError = () => {
-  if (email.validity.valueMissing && password.validity.valueMissing) {
-    emailError.textContent = 'Please enter an e-mail address.';
-    passwordError.textContent = 'Forgot your password ?';
-    emailError.className = 'error active';
-    passwordError.className = 'error active';
-  } else if (email.validity.typeMismatch) {
-    emailError.textContent = 'Entered value must be an e-mail address.';
-    emailError.className = 'error active';
-  } else if (email.validity.valueMissing) {
-    emailError.textContent = 'Enter e-mail address.';
-    emailError.className = 'error active';
-  } else if (password.validity.valueMissing) {
-    passwordError.textContent = 'Forgot your password ?';
-    passwordError.className = 'error active';
-  }
+successMsg=(input) =>{
+  const formSignIn = input.parentElement;
+  formSignIn.className = 'isValid success';
+}
 
+validateLogin = () => {
+  const emailInput = email_signIn.value.trim();
+  const passwordInput = password_signIn.value.trim();
+
+
+  //=====
+  if (emailInput === '')
+    errorMsg(email_signIn, 'Email is required')
+  else if (!(validateEmail(emailInput))) 
+    errorMsg(email_signIn, 'Please enter a valid email')
+  else 
+    successMsg(email_signIn)
+  //=====
+  if (passwordInput === '')
+    errorMsg(password_signIn, 'Password is required')
+  else if((passwordInput.length < 6))
+    errorMsg(password_signIn, 'Password must be at least 6 characters')
+  else 
+    successMsg(password_signIn)
 }

@@ -1,0 +1,65 @@
+<p><a class="close" title="Close" onclick="ResetForm()" id="closeMe" rel="nofollow">&times;</a></p>
+
+<div class="modal-left">
+  <img id="modal-img-left" src="../static/svg/modal-right.svg" alt="">
+</div>
+<div class="modal-right">
+  <img id="modal-img-right" src="../static/svg/modal-left.svg" alt="">
+</div>
+<div class="form_container">
+  {{!-- <h1 id="modal-img-text"> <span id="modal-img-text-title">Join Batu's Steakhouse Community! </span>
+    <br>
+    More than just meat.
+  </h1> --}}
+  <fieldset>
+    <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244" class=" fa fa-user-circle fa-2x"></i></span>
+      Create Account</legend>
+    <div class="social-links-form">
+      <a href=""><i class="fa fa-google fa-2x"></i></a>
+      <a href=""><i class="fa fa-github fa-2x"></i></a>
+      <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+      <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
+    </div>
+    <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
+      <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
+        or
+      </span>
+    </div>
+    <form id="signup_form" method="POST" novalidate>
+      <p class="isValid">
+        <label for="name">
+          <input type="text" id="username" name="username" placeholder="First Name *" value="{{data.username}}">
+          <span class="signup_error"></span>
+        </label>
+      </p>
+      <p class="isValid">
+        <label for="lastname">
+          <input type="text" id="lastname" name="lastname" placeholder="Last Name *" value="{{data.lastname}}">
+          <span class="signup_error"></span>
+        </label>
+      </p>
+      <p class="isValid">
+        <label for="mail_signup">
+          <input type="email" id="email" name="email" placeholder="Your Email *" value="{{data.email}}" />
+          <span class="signup_error"></span>
+        </label>
+      </p>
+      {{#if registerErr}}
+      {{#each registerErr}}
+      <span class="error_emailDpl">{{this.msg}}</span>
+      {{/each}}
+      {{/if}}
+
+      <p class="isValid">
+        <label for="password_signup">
+          <input type="password" id="password_signup" name="password_signup" placeholder="Password *"
+            value="{{data.password_signup}}">
+          <span class="signup_error"></span>
+        </label>
+      </p>
+      <button type="submit" class="register-btn"><span>Create New Account</span></button>
+      <script type="text/javascript" src="/scripts/signup-form.js"></script>
+
+</div>
+</form>
+</fieldset>

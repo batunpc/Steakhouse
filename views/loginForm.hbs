@@ -1,0 +1,41 @@
+<body>
+  <div class="form_container">
+    <fieldset>
+      <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244"
+            class=" fa fa-user-circle fa-2x"></i></span>
+        Customer Login</legend>
+      <div class="social-links-form">
+        <a href="userForms"><i class="fa fa-google fa-2x"></i></a>
+        <a href=""><i class="fa fa-github fa-2x"></i></a>
+        <a href=""><i class="fa fa-twitter fa-2x"></i></a>
+        <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
+      </div>
+      <br>
+      <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
+        <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
+          or
+        </span>
+      </div>
+
+      <form id="login_form" class="login_form" novalidate>
+        <p>
+          <label for="mail" style="margin-top: 27px;">
+            <input type="email" id="mail" name="mail" placeholder="Your Email *" required>
+            <span class="signIn_error"></span>
+          </label>
+        </p>
+        <p>
+          <label for="password" style="margin-top: 32px;">
+            <input type="password" id="password" name="password" placeholder="Password *" required>
+            <span class="signIn_error"></span>
+          </label>
+        </p>
+        <button type="submit" id="log-in-btn"><b>Log In</b></button>
+        <script src="/scripts/login-form.js"></script>
+
+        <div style="width: 100%; border-top: 1px solid #eccbbf; text-align: center;">
+        </div>
+      </form>
+    </fieldset>
+    <button class="register-btn"><a href="register"><span>Create New Account</span> </a></button>
+  </div>

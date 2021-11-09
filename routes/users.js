@@ -8,21 +8,41 @@ const {
 } = require("express-validator");
 
 
-//get user credentials list
-router.get('/', (req, res) =>
+router.get('/login', (req, res) =>
   User.findAll()
   .then(users => {
-    res.render("userForms", {
+    res.render("loginForm", {
+      title: "userForms",
+      layout: "login"
+    })
+  })
+  .catch(err => console.log("ERR: occured in login GET\n",err))
+);
+
+//add users -register
+
+
+
+
+
+
+/////
+// === REGISTER ===
+router.get('/register', (req, res) =>
+  User.findAll()
+  .then(users => {
+    res.render("registerForm", {
       title: "userForms",
       layout: "register"
     })
     console.log(users)
+    //get user credentials list that registered
   })
   .catch(err => console.log(err))
 );
 
 //add users -register
-router.post('/', 
+router.post('/register', 
 [  
   check("email").notEmpty().custom(userEmail=> {
             return new Promise((resolve, reject) => {
@@ -50,7 +70,7 @@ router.post('/',
     }).then((user)=>{
       if(user){
         registerErr.push({msg: "This email is already registered!"})
-        res.render("userForms", {
+        res.render("registerForm", {
           data:req.body,
           registerErr,
           layout: "register"

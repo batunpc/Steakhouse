@@ -61,35 +61,30 @@
 }
 
 .modal-right #modal-img-right {
-  width: 70%;
-  height: 50%;
   position: absolute;
-  top: 40%;
-  transform: translate(-140%, -80%);
+  top: 4%;
+  right: 60%;
+  transform: scale(0.34, 0.39);
 }
 
 .modal-left #modal-img-left {
-  width: 80%;
-  height: 50%;
   position: absolute;
   top: 40%;
-  transform: translate(170%, -20%);
+  left: 52%;
+  transform: scale(0.35, 0.37);
 }
 
 #modal-img-text {
-  width: 100%;
-  height: 20%;
-  left: 100px;
-  text-align: center;
   position: absolute;
-  top: 50%;
-  transform: translate(-140%, -5%);
-  color: #eccbbf
+  top: 70%;
+  left: 0px;
+  width: 450px;
+  color: #eccbbf;
+  text-align: center;
 }
 
 #modal-img-text-title {
   color: #ff4500;
-  width: 700px;
 }
 
 .isValid label {
@@ -119,7 +114,7 @@
   border-radius: 0px 0 23px 2px;
   box-sizing: border-box;
   float: right;
-  padding: 5px;
+  padding: 7px;
   margin: 0;
   visibility: hidden;
 }
