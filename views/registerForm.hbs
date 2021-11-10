@@ -10,8 +10,8 @@
     More than just meat.
   </h1> --}}
   <fieldset>
-    <p><a class="close" title="Close" onclick="ResetForm()" id="closeMe" rel="nofollow">&times;</a></p>
-
+    <p><a class="close" title="Reset the register form" onclick="ResetForm()" id="closeMe" rel="nofollow">&times;</a>
+    </p>
     <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244" class=" fa fa-user-circle fa-2x"></i></span>
       Create Account</legend>
     <div class="social-links-form">
@@ -51,9 +51,8 @@
       {{/if}}
 
       <p class="isValid">
-        <label for="password_signup">
-          <input type="password" id="password_signup" name="password_signup" placeholder="Password *"
-            value="{{data.password_signup}}">
+        <label for="password">
+          <input type="password" id="password" name="password" placeholder="Password *" value="{{data.password}}">
           <span class="signup_error"></span>
         </label>
       </p>

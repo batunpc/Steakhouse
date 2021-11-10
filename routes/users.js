@@ -7,7 +7,14 @@ const {
   validationResult
 } = require("express-validator");
 
+/////
+// === DASHBOARD (user can see after register) ===
+router.get('/dashboard', (req, res)=>{
+  
 
+})
+/////
+// === LOGIN ===
 router.get('/login', (req, res) =>
   User.findAll()
   .then(users => {
@@ -19,60 +26,60 @@ router.get('/login', (req, res) =>
   .catch(err => console.log("ERR: occured in login GET\n",err))
 );
 
-
 router.post('/login', 
 [ 
   check("email").notEmpty().custom(email=> {
-    return new Promise((resolve, reject) => {
+    return new Promise((res, rej) => {
       User.findOne({ where: { email: email } })
       .then(emailExist => {
-          if(emailExist !== null){
-            reject(new Error('Email already exists.'))
-          }else{
-            resolve(true)
-          }
-      }).catch(err => console.log("Err:", err));
+        if(emailExist !== null)
+          res(true)
+        else
+          rej(new Error('email doesnt exist.'))
+      }).catch(err => console.log(err));
     })
   }),
-  check("password_signup").notEmpty()
+  check("password").notEmpty().custom(password => {
+    return new Promise((res, rej) =>{
+      User.findOne({ where: {password}})
+      .then(passwordExist => {
+        if (passwordExist !== null) 
+          res(true)
+        else rej(new Error('password doesnt exist.'))
+      }).catch(err => console.log(err))
+    })
+  })
 ], 
 (req,res) =>{
-  console.log("AAAAAAA")
-/*   const {email,password} = req.body 
- */
-  const email = req.body.email
+  const {email,password} = req.body 
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
     let loginErr = [];
-    User.findOne({
-      where: email
-    }).then((user)=>{
+    User.findAll({where:{ 
+      email: email,
+      password: password
+    }})
+    .then((user)=>{
       if(user){
-        loginErr.push({msg: "This email does not exist"})
+        loginErr.push({msg: "Invalid entry credentials does not exist"})
         res.render("loginForm", {
           dataLogin:req.body,
           loginErr,
+          email,
+          password,
           layout: "login"
         });
       }
     }).catch(err => console.log("ERR: occured in login POST",err))
   }else if(errors.isEmpty()){
-  db.sync().then(function () {
-    res.render("loginForm", {
-      title: "userForms",
-      layout: "login"
+    res.render("dashboard", {
+      title: "Welcome",
+      layout: "userProfile",
+      email
     })
-    .then(res.redirect(`/dashboard/${email}`))
-    .catch(err => console.log("ERR: occured in login POST",err))
-  })
   }
 })
-
-
-
-
-
 
 /////
 // === REGISTER ===
@@ -84,8 +91,7 @@ router.get('/register', (req, res) =>
       title: "userForms",
       layout: "register"
     })
-    console.log(users)
-    //get user credentials list that registered
+    console.log(users) // lists all registered users to console
   })
   .catch(err => console.log(err))
 );
@@ -94,25 +100,25 @@ router.get('/register', (req, res) =>
 router.post('/register', 
 [  
   check("email").notEmpty().custom(userEmail=> {
-            return new Promise((resolve, reject) => {
-                User.findOne({ where: { email: userEmail } })
-                .then(emailExist => {
-                    if(emailExist !== null){
-                        reject(new Error('Email already exists.'))
-                    }else{
-                        resolve(true)
-                    }
-                })
-                
-            })
-        }),
-  check("password_signup").notEmpty()
+    return new Promise((resolve, reject) => {
+      User.findOne({ where: { email: userEmail } })
+        .then(emailExist => {
+        if(emailExist !== null)
+          reject(new Error('Email already exists.'))
+        else
+          resolve(true)
+        })
+    })
+  }),
+  check("password").notEmpty()
 ], 
 (req,res) =>{
-  const {username, lastname, email , password_signup} = req.body 
+  const {username, lastname, email , password} = req.body 
   const errors = validationResult(req);
-
+  
   if (!errors.isEmpty()) {
+    console.log('=>', email, password)
+    console.log("YABADABA")
     let registerErr = [];
     User.findOne({
       where: {email}
@@ -129,19 +135,19 @@ router.post('/register',
   }else if(errors.isEmpty()){
       //insert into table
   db.sync().then(function () {
-
     User.create({
       username:username,
       lastname:lastname,
       email:email,
-      password_signup:password_signup
+      password:password
     })
-    .then(res.redirect(`/dashboard/${email}`))
+    .then(res.render("dashboard",{
+      layout:"userProfile",
+      email
+    }))
     .catch(err => console.log(err))
-    ;
   })
   }
 })
-
 
 module.exports = router;

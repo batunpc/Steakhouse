@@ -1,6 +1,6 @@
 const formSignIn = document.getElementById('login_form');
 
-const email_signIn = document.getElementById('mail');
+const email_signIn = document.getElementById('email');
 const password_signIn = document.getElementById('password');
 
 
