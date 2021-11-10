@@ -126,9 +126,9 @@ span.error_emailDpl {
   font-size: 20px;
   padding: 5px;
   width: 270px;
-  transition: all 0.5s;
+  transition: all 0.2s;
   cursor: pointer;
-  margin: 22px;
+  margin: 17px 22px;
 }
 
 .register-btn span {

@@ -21,7 +21,6 @@ body {
   padding: 25px 45px;
   background-color: #24252a;
   border-radius: 20px;
-
   font-family: 'Poppins', sans-serif;
 }
 
@@ -74,24 +73,19 @@ body {
 }
 
 ::placeholder {
-  color: #afafaf;
+  color: #979797c7;
   opacity: 1;
 }
-
 
 .error.active {
   font-weight: 700;
   font-size: 12px;
   font-style: italic;
-
   color: #cc0000;
-
   float: right;
   padding: 5px 10px 0px 5px;
 
 }
-
-
 
 #log-in-btn {
   display: flex;

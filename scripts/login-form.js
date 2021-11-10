@@ -3,15 +3,13 @@ const formSignIn = document.getElementById('login_form');
 const email_signIn = document.getElementById('mail');
 const password_signIn = document.getElementById('password');
 
-const emailError = document.querySelector('#mail + span.error');
-const passwordError = document.querySelector('#password + span.error');
 
 
 validateEmail = (email_signIn) => {
-  return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(email_signIn);
+  return /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/.test(email_signIn);
 }
 validatePassword = (password_signIn) => {
-  return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/.test(password_signIn);
+  return /^[a-zA-Z0-9_-]{6,}$/.test(password_signIn);
 }
 
 formSignIn.addEventListener('submit', event => {  

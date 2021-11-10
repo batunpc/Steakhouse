@@ -17,20 +17,27 @@
         </span>
       </div>
 
-      <form id="login_form" class="login_form" novalidate>
+      <form id="login_form" class="login_form" method="POST" novalidate>
+        {{#if loginErr}}
+        {{#each loginErr}}
+        <span class="error_emailDpl">{{this.msg}}</span>
+        {{/each}}
+        {{/if}}
         <p>
           <label for="mail" style="margin-top: 27px;">
-            <input type="email" id="mail" name="mail" placeholder="Your Email *" required>
+            <input type="email" id="mail" name="mail" placeholder="Your Email *" value="{{dataLogin.email}}" required>
             <span class="signIn_error"></span>
           </label>
         </p>
         <p>
           <label for="password" style="margin-top: 32px;">
-            <input type="password" id="password" name="password" placeholder="Password *" required>
+            <input type="password" id="password" name="password" placeholder="Password *" value="{{dataLogin.password}}"
+              required>
             <span class="signIn_error"></span>
           </label>
         </p>
         <button type="submit" id="log-in-btn"><b>Log In</b></button>
+
         <script src="/scripts/login-form.js"></script>
 
         <div style="width: 100%; border-top: 1px solid #eccbbf; text-align: center;">
