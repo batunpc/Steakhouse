@@ -62,7 +62,7 @@ router.post('/login',
     }})
     .then((user)=>{
       if(user){
-        loginErr.push({msg: "Invalid entry credentials does not exist"})
+        loginErr.push({msg: "We cannot find an account with provided credentials. Please create your account below"})
         res.render("loginForm", {
           dataLogin:req.body,
           loginErr,

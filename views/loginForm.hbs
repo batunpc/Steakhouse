@@ -5,12 +5,12 @@
             class=" fa fa-user-circle fa-2x"></i></span>
         Customer Login</legend>
       <div class="social-links-form">
-        <a href="userForms"><i class="fa fa-google fa-2x"></i></a>
+        <a href=""><i class="fa fa-google fa-2x"></i></a>
         <a href=""><i class="fa fa-github fa-2x"></i></a>
         <a href=""><i class="fa fa-twitter fa-2x"></i></a>
         <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
       </div>
-      <br>
+
       <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
         <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
           or
@@ -18,20 +18,26 @@
       </div>
 
       <form id="login_form" class="login_form" method="POST" novalidate>
-        {{#if loginErr}}
-        {{#each loginErr}}
-        <span class="error_emailDpl">{{this.msg}}</span>
-        {{/each}}
-        {{/if}}
+
+        <div class="err_auth">
+          {{#if loginErr}}
+          {{#each loginErr}}
+          <span>{{this.msg}}</span>
+          {{/each}}
+          {{/if}}
+        </div>
+
+
         <p>
-          <label for="email" style="margin-top: 27px;">
+          <label for="email" style="margin-top: 20px;">
             <input type="email" id="email" name="email" placeholder="Your Email *" value="{{dataLogin.email}}" required>
             <span class="signIn_error"></span>
           </label>
         </p>
         <p>
-          <label for="password" style="margin-top: 32px;">
-            <input type="password" id="password" name="password" placeholder="Password *" value="{{password}}" required>
+          <label for="password" style="margin-top: 30px;">
+            <input type="password" id="password" name="password" placeholder="Password *" value="{{dataLogin.password}}"
+              required>
             <span class="signIn_error"></span>
           </label>
         </p>
