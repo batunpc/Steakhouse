@@ -7,12 +7,7 @@ const {
   validationResult
 } = require("express-validator");
 
-/////
-// === DASHBOARD (user can see after register) ===
-router.get('/dashboard', (req, res)=>{
-  
 
-})
 /////
 // === LOGIN ===
 router.get('/login', (req, res) =>
@@ -51,7 +46,7 @@ router.post('/login',
   })
 ], 
 (req,res) =>{
-  const {email,password} = req.body 
+  const {email,username,password} = req.body 
   const errors = validationResult(req);
 
   if (!errors.isEmpty()) {
@@ -62,7 +57,7 @@ router.post('/login',
     }})
     .then((user)=>{
       if(user){
-        loginErr.push({msg: "We cannot find an account with provided credentials. Please create your account below"})
+        loginErr.push({msg: "We cannot find an account with the provided credentials. Please create your account below"})
         res.render("loginForm", {
           dataLogin:req.body,
           loginErr,
@@ -73,9 +68,10 @@ router.post('/login',
       }
     }).catch(err => console.log("ERR: occured in login POST",err))
   }else if(errors.isEmpty()){
-    res.render("dashboard", {
-      title: "Welcome",
+    res.render("login_dashboard", {
+      title: "Welcome_login",
       layout: "userProfile",
+      username,
       email
     })
   }
@@ -141,8 +137,11 @@ router.post('/register',
       email:email,
       password:password
     })
-    .then(res.render("dashboard",{
+    .then(res.render("register_dashboard",{
+      title: "Welcome_register",
       layout:"userProfile",
+      username,
+      lastname,
       email
     }))
     .catch(err => console.log(err))

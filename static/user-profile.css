@@ -1,7 +1,12 @@
-.greet {
-  color: #ffff;
+* {
+  color: #fff;
 }
 
-.greet span {
+.user_greet {
   color: #f17244
+}
+
+td {
+  color: #f17244;
+
 }
