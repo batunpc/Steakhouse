@@ -1,9 +1,11 @@
-* {
-  color: #fff;
+.containter {
+  margin: 20px;
 }
 
 .user_greet {
-  color: #f17244
+  color: #f17244;
+  font-style: italic;
+  font-weight: 270;
 }
 
 td {
