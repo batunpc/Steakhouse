@@ -37,8 +37,12 @@ a {
 
 .brand_logo {
   justify-self: start;
-  margin: .5em .0em 0em 1em;
+  margin: .7em .0em .3em 1em;
+  transition: 120ms linear;
+}
 
+.brand_logo:hover {
+  transform: scale(1.1);
 }
 
 .nav_links {
