@@ -30,22 +30,10 @@ server.engine(".hbs", exphbs({
   defaultLayout: "main"
 }));
 
-// User routes
-server.use('/userForms', require('./routes/users'))
-
-//home
-server.get("/", (req, res) => {
-  res.render("home", {
-    title: "home"
-  })
-});
-
-//Meals Package
-server.get("/mealPack", (req, res) => {
-  res.render("mealPack", {
-    title: "mealPack"
-  })
-});
+// main routes
+server.use('/', require('./routes/main'))
+// User form routes
+server.use('/users', require('./routes/users'))
 
 //err handling
 server.use((req, res) => {
@@ -55,7 +43,6 @@ server.use((req, res) => {
       "<i>something broke :/</i>"
     );
 });
-
 //port
 const HTTP_PORT = process.env.PORT || 8080;
 server.listen(HTTP_PORT, (err) => {

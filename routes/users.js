@@ -13,7 +13,7 @@ const {
 router.get('/login', (req, res) =>
   User.findAll()
   .then(users => {
-    res.render("loginForm", {
+    res.render("client/loginForm", {
       title: "userForms",
       layout: "login"
     })
@@ -58,7 +58,7 @@ router.post('/login',
     .then((user)=>{
       if(user){
         loginErr.push({msg: "We cannot find an account with the provided credentials. Please create your account below"})
-        res.render("loginForm", {
+        res.render("client/loginForm", {
           dataLogin:req.body,
           loginErr,
           email,
@@ -68,7 +68,7 @@ router.post('/login',
       }
     }).catch(err => console.log("ERR: occured in login POST",err))
   }else if(errors.isEmpty()){
-    res.render("login_dashboard", {
+    res.render("client/login_dashboard", {
       title: "Welcome_login",
       layout: "userProfile",
       username,
@@ -83,7 +83,7 @@ router.post('/login',
 router.get('/register', (req, res) =>
   User.findAll()
   .then(users => {
-    res.render("registerForm", {
+    res.render("client/registerForm", {
       title: "userForms",
       layout: "register"
     })
@@ -114,14 +114,13 @@ router.post('/register',
   
   if (!errors.isEmpty()) {
     console.log('=>', email, password)
-    console.log("YABADABA")
     let registerErr = [];
     User.findOne({
       where: {email}
     }).then((user)=>{
       if(user){
         registerErr.push({msg: "This email is already registered!"})
-        res.render("registerForm", {
+        res.render("client/registerForm", {
           data:req.body,
           registerErr,
           layout: "register"
@@ -137,7 +136,7 @@ router.post('/register',
       email:email,
       password:password
     })
-    .then(res.render("register_dashboard",{
+    .then(res.render("client/register_dashboard",{
       title: "Welcome_register",
       layout:"userProfile",
       username,

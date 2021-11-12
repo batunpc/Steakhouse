@@ -78,7 +78,6 @@
   width: 100%;
 }
 
-
 .isValid span {
   font-size: 80%;
   font-style: italic;
@@ -124,10 +123,7 @@ span.error_emailDpl {
   padding-top: 17px;
   font-size: medium;
   font-weight: 770;
-
-
 }
-
 
 .register-btn {
   display: inline-block;
