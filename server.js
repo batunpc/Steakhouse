@@ -6,9 +6,8 @@ const server = express();
 server.use("/static", express.static(`${__dirname}/static`));
 server.use("/scripts", express.static(`${__dirname}/scripts`));
 
-//Database
+//Database and test
 const db = require('./config/database')
-// Test DB
 db
 .authenticate()
 .then(function() {
