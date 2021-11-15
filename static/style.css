@@ -156,10 +156,10 @@ a {
   }
 }
 
-/** =========  Grid Navigation Bar  =========  */
+/* =========  Grid Navigation Bar  =========  */
 
 
-/** =========  Hero Section  =========  */
+/* =========  Hero Section  =========  */
 .hero {
   width: 100vw;
   height: 100vh;
@@ -223,8 +223,6 @@ a {
   background-position: bottom;
 }
 
-
-
 .header-title {
   z-index: 2;
   position: absolute;
@@ -282,10 +280,9 @@ a {
   left: 0px;
 }
 
-/** =========  Hero Section  =========  */
+/* =========  Hero Section  =========  */
 
-/*content section */
-
+/* ========= figure 1.1 ========== */
 .content_section {
   display: flex;
   justify-content: center;
@@ -299,9 +296,12 @@ a {
   color: #eccbbf;
 }
 
+/* ========= figure 1.1 ========== */
 
 
-/* ========================== */
+
+
+/* ========= figure 1.2========== */
 .grid-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -337,10 +337,10 @@ a {
   width: 70%;
 }
 
+/* ========= figure 1.2========== */
 
 
-/* ========================== */
-
+/* ========= figure 1.3========== */
 
 .grid {
   display: grid;
@@ -368,6 +368,16 @@ a {
   letter-spacing: 2px;
   color: #f17244
 }
+
+.grid figure h2 {
+  font-size: 20px;
+  padding-top: 20px;
+  color: #f17244;
+  font-family: flood-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 
 .grid figure h4 {
   font-size: 20px;
@@ -409,9 +419,7 @@ a {
   border: none;
 }
 
-
-
-
+/* ========= figure 1.3========== */
 .containter_column_mealpac {
   display: flex;
   background-color: #303135;
@@ -433,35 +441,7 @@ a {
   height: 550px;
 }
 
-
-
-.hoverme {
-  font-size: 1.1vw;
-  padding: 7px;
-  border-radius: 50%;
-  color: #eccbbf;
-}
-
-.hide {
-  display: none;
-}
-
-.hoverme:hover+.hide {
-  display: block;
-  color: #eccbbf;
-}
-
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-ul {
-  list-style: none;
-}
-
-
+/* === Footer === */
 .footer_container {
   max-width: 1170px;
   margin: auto;
@@ -474,6 +454,16 @@ ul {
   bottom: 0px;
   margin-bottom: 0px;
 }
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ul {
+  list-style: none;
+}
+
 
 .footer_column {
   width: 30%;
@@ -549,3 +539,5 @@ ul {
     width: 100%;
   }
 }
+
+/* === Footer === */
