@@ -49,7 +49,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-There are many great RESTful APIs available on GitHub; however I created this website based on my college requirements, so there might be things that you may notice I took the roadmap in a longer way. Although it was nice experience creating my first RESTful API using only nodeJS expressJS and postgreSQL as database. <br>
+There are many great RESTful APIs available on GitHub; however I created this website based on my college requirements, so there might be things that you may notice I took the roadmap in a longer way. Although it was nice experience creating my first RESTful API using expressJS, sequelize, express-handlebars as templating engine and postgreSQL as database. <br>
 The instructions for section WEB322 Assignment 4 & 5 can be found in pdf file.
 
 <p align="right">(<a href="#top">back to top</a>)</p>
