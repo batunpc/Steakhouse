@@ -12,15 +12,12 @@
         <a href=""><i class="fa fa-twitter fa-2x"></i></a>
         <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
       </div>
-
       <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
         <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
           or
         </span>
       </div>
-
       <form id="login_form" class="login_form" method="POST" novalidate>
-
         <div class="err_auth">
           {{#if loginErr}}
           {{#each loginErr}}
@@ -28,8 +25,6 @@
           {{/each}}
           {{/if}}
         </div>
-
-
         <p>
           <label for="email" style="margin-top: 20px;">
             <input type="email" id="email" name="email" placeholder="Your Email *" value="{{dataLogin.email}}" required>
@@ -44,12 +39,18 @@
           </label>
         </p>
         <button type="submit" id="log-in-btn"><b>Log In</b></button>
-
         <script src="/scripts/login-form.js"></script>
-
         <div style="width: 100%; border-top: 1px solid #eccbbf; text-align: center;">
         </div>
       </form>
     </fieldset>
     <button class="register-btn"><a href="register"><span>Create New Account</span> </a></button>
+    <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
+      <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
+        for administrators
+      </span>
+    </div>
+    <button class="register-btn" style="width:150px; margin: 20px 82px; border-color:#f17244">
+      <a href="/clerk/register"><span>Clerk Entry</span></a>
+    </button>
   </div>

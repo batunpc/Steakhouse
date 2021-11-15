@@ -5,7 +5,7 @@ body {
 
 }
 
-.navBar-login {
+.navbar-forms {
   background-color: #24252a;
   display: grid;
   grid-auto-flow: column;

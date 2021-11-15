@@ -318,21 +318,74 @@ a {
   color: #f17244;
 }
 
-.containter_column_meal {
-  display: flex;
+
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-gap: 10px;
   background-color: #303135;
-  justify-content: center;
-  padding: 100px;
+  align-items: stretch;
+
 }
 
-.meal_column1,
-.meal_column2,
-.meal_column3,
-.meal_column4 {
-  width: 23%;
-  text-align: center;
-  cursor: pointer;
+.grid figure {
+  display: grid;
+  align-items: stretch;
+  justify-items: center;
+  margin: 25px 0px;
+  color: #eccbbf;
+
 }
+
+.grid figcaption {
+  padding-top: 10px;
+  text-align: center;
+  font-size: xx-large;
+  font-family: 'Amatic SC', cursive;
+  letter-spacing: 2px;
+  color: #f17244
+}
+
+.grid figure h4 {
+  font-size: 20px;
+  padding: 5px;
+  color: #f17244;
+  font-family: flood-std, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.grid figure h5 {
+  color: #eccbbf;
+  font-style: italic;
+  font-size: 15px;
+  padding: 7px;
+}
+
+.grid figure span {
+  color: #eccbbf;
+  font-style: italic;
+  font-size: 15px;
+  padding: 5px;
+}
+
+.grid figure p {
+  text-align: center;
+  font-size: 17px;
+  line-height: 25px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.grid img {
+  border: 1px solid #ccc;
+  box-shadow: 5px 5px 7px 7px rgba(0.3, 0.3, 0.3, 0.3);
+  max-width: 75%;
+  height: 320px;
+  border-radius: 10px;
+  border: none;
+}
+
 
 
 
@@ -357,18 +410,7 @@ a {
   height: 550px;
 }
 
-figure img:hover {
-  box-shadow:
-    2px 2px #d83e06bb,
-    3px 3px #d83e06bb,
-    4px 4px #d83e06bb,
-    5px 5px #d83e06bb,
-    6px 6px #d83e06bb,
-    7px 7px #d83e06bb;
-  -webkit-transform: translateX(-3px);
-  transform: translateX(-3px);
-  transition: .7s ease;
-}
+
 
 .hoverme {
   font-size: 1.1vw;

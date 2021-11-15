@@ -135,7 +135,8 @@ span.error_emailDpl {
   width: 270px;
   transition: all 0.2s;
   cursor: pointer;
-  margin: 17px 22px;
+  margin: 22px;
+
 }
 
 .register-btn span {

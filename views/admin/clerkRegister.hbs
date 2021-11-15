@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="/static/clerk.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="tableContainer">
+    <div class="row">
+      <div class="col-12 table-responsive ">
+        <table class="table table-image ">
+          <thead style="text-align: center;">
+            <tr>
+              <th scope="col">Meal Package Name</th>
+              <th scope="col">Meal Package Price</th>
+              <th scope="col">Description</th>
+              <th scope="col">Food category</th>
+              <th scope="col">Number of meals</th>
+              <th scope="col">Images</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data}}
+            <tr>
+              <form method="post" action="updateUser" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{{id}}" />
+                <td style="vertical-align:middle;">
+                  <input type="text" name="mealName" value="{{mealName}}" />
+                </td>
+                <td style="vertical-align:middle;">
+                  <input type=" text" name="price" value="{{price}}" />
+                </td>
+                <td style="vertical-align:middle;">
+                  <input style="padding-bottom:100px; width:200px;" id="description" type="text" name="description"
+                    value="{{description}}" />
+                </td>
+                <td style="vertical-align:middle; ">
+                  <input type="text" name="category" value="{{category}}" />
+                </td>
+                <td style="vertical-align:middle;">
+                  <input type="number" name="meals_number" value="{{meals_number}}" />
+                </td>
+                <td class="w-25">
+                  <img class="img-fluid img-thumbnail;" src="/static/uploads/{{photo}}" />
+                </td>
+                <td style="vertical-align:middle;"> <input style="color:#f17244" type="submit" value="Update" /></td>
+              </form>
+
+
+              <td style="vertical-align:middle; ">
+                <form method="POST" action="deleteUser" enctype="multipart/form-data">
+                  <input type="hidden" name="id" value="{{id}}" />
+                  <input style="margin-top: 20px; color:#f17244" type="submit" value="Delete">
+                </form>
+              </td>
+
+            </tr>
+            {{else}}
+            <tr>
+              <td colspan="6" class="text-center">No Data Available</td>
+            </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <hr>
+    <article>
+      <h1>Data Entry From Clerk </h1>
+      <p>Create and update meal packages</p>
+    </article>
+    <br>
+    <form action="/clerk/register" method="POST" enctype="multipart/form-data">
+      <input style="width: 330px" id="mealName" type="text" name="mealName" placeholder="Meal Package name *"
+        required />
+      <input style="width: 170px" id="price" type="number" name="price" placeholder="Meal Package price *"
+        required /><br />
+      <div>
+        <textarea name="description" id="description" cols="84" rows="10"></textarea>
+      </div>
+      <input style="width:330px" d="category" type="text" name="category" placeholder="Food Category *" required />
+      <input style="width: 170px" id="meals_number" type="number" name="meals_number"
+        placeholder="Number of Meals *" /><br />
+      <input id="photo" type="file" name="photo" placeholder="Photo" /><br required />
+      <button class="register-btn" type="submit">
+        <span style="line-height: normal;">Create Record </span>
+      </button>
+    </form>
+  </div>
+</body>
+
+</html>

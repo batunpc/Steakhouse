@@ -20,6 +20,8 @@
   <title>Home | Batu Steak House</title>
   <link rel="shortcut icon" type="image/png" href="/static/icon/web_icon.png">
   <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="https://use.typekit.net/okg8dxw.css">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -83,7 +85,6 @@
         </p>
       </div>
     </div>
-
     <!--figure 1.3-->
     <a name="menu"></a>
     <div class="content_section">
@@ -91,37 +92,64 @@
         Batu Chef Cooks, You Simply Heat and Eat
       </div>
     </div>
+
     <!--top meals-->
-    <div class="containter_column_meal">
-      <div class="meal_column1">
-        <img src="static/images/tbone.jpg" style="width: 80%; height: 240px;" />
-        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- T-BONES' Unusual Reuben -</figcaption>
-        <div align="center">
-        </div>
-      </div>
-
-      <div class="meal_column2">
-        <img src="static/images/ribeye.jpg" style="width: 80%; height: 240px; " />
-        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- Smoked Rib-Eye -</figcaption>
-        <div align="center">
-        </div>
-      </div>
-
-      <div class="meal_column3">
-        <img src="static/images/flank.jpg" style="width: 80%; height: 240px; " />
-        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- 8 oz. Signature Flank Steak -</figcaption>
-        <div align="center">
-        </div>
-      </div>
-
-      <div class="meal_column4">
-        <img src="static/images/tunasteak.jpg" style="width: 80%; height: 240px; " />
-        <figcaption style=" font-size: 1.2vw; color: #eccbbf">- Grilled Lime Tuna Steak -</figcaption>
-        <div align="center">
-        </div>
+    <div class="grid">
+      <figure>
+        <img src="static/images/tbone.jpg" alt="tbone">
+        <figcaption>Roasted Steak with Crispy Broccoli </figcaption>
+        <span>42.20 <i class="fa fa-dollar"></i></span>
+        <h4>- Keto Meal -</h4>
+        <h5>2 meals</h5>
+        <p>Large heads of broccoli,12-oz. sirloin, boneless rib-eye, or New York strip steaks (about 1¼" thick)
+          jalapeño,
+          finely chopped </p>
+      </figure>
+      <figure>
+        <img src="static/images/ribeye.jpg" alt="ribeye">
+        <figcaption>Crab-Paste-Grilled Rib Eye</figcaption>
+        <span>24.00 <i class="fa fa-dollar"></i></span>
+        <h4>- Weight Loss Meal -</h4>
+        <h5>1 meal</h5>
+        <p>A perfectly marbled rib eye doesn’t need much to shine, but basting it with jarred crab paste adds a whole
+          new level of flavor.</p>
+      </figure>
+      <figure>
+        <img src="static/images/bistecca.jpg" alt="bistecca" width="265px">
+        <figcaption>Chi Spacca's Bistecca Fiorentina</figcaption>
+        <span>50.70 <i class="fa fa-dollar"></i></span>
+        <h4>- Muscle Gain Meal -</h4>
+        <h5>2 meals</h5>
+        <p>
+          If you don’t enjoy very rare meat, keep these steaks on the grill until they reach 120°; they’ll still be
+          rare, but less aggressively so.</p>
+      </figure>
+      <figure>
+        <img src="static/images/ribroast.jpg" alt="tunasteak">
+        <figcaption>Low-and-Slow Rib Roast</figcaption>
+        <span>37.90 <i class="fa fa-dollar"></i></span>
+        <h4>- Weight Loss Meal -</h4>
+        <h5>3 meals</h5>
+        <p>
+          This rib roast is rubbed with a punchy mixture of rosemary, anchovies, and garlic. The reverse sear is
+          excellent.
         </p>
-      </div>
+      </figure>
+
+      {{#each data}}
+      <figure>
+        <img src="/static/uploads/{{photo}}" />
+        <figcaption>-{{mealName}}-</figcaption>
+        <span> {{price}}<i class="fa fa-dollar"></i></span>
+        <h4>- {{category}} -</h4>
+        <h5>{{meals_number}} meals</h5>
+        <p>{{description}} </p>
+
+      </figure>
+      {{/each}}
     </div>
+
+
   </main>
 </body>
 

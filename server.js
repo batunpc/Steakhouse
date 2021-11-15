@@ -33,6 +33,9 @@ server.engine(".hbs", exphbs({
 server.use('/', require('./routes/main'))
 // User form routes
 server.use('/users', require('./routes/users'))
+//administrator routes
+server.use('/clerk', require('./routes/clerks'))
+
 
 //err handling
 server.use((req, res) => {
