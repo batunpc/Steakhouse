@@ -89,11 +89,13 @@
   padding: 7px;
   margin: 0;
   visibility: hidden;
+
 }
 
 .isValid.error span {
   visibility: visible;
   border-color: #900;
+
 }
 
 .isValid.success {
@@ -123,6 +125,9 @@ span.error_emailDpl {
   padding-top: 17px;
   font-size: medium;
   font-weight: 770;
+  transition-timing-function: ease-out;
+  transition-delay: 3s;
+  transition: 1s;
 }
 
 .register-btn {

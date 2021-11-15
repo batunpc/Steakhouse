@@ -41,48 +41,30 @@
     <div class="content_section">
       <div class="content_text">Healthy food, for a wealthy mood!</div>
     </div>
+
+
     <!-- figure 1.2 -->
-    <div class="containter_column">
-      <div class="column1">
+    <div class="grid-content">
+      <div class="content">
         <img src="static/images/menu.png" style="width: 48%; height: 220px; border-radius: 35%" />
-        <p style="color: #eccbbf">
-          <b style=" font-size: 1.4vw">Pick</b>
-        <div align="center">
-          <p style="font-size: 130%; width: 50%; ">10+ types of steaks done with special skills. Order some <br>(or
-            all)
-            of these meals</p>
-        </div>
-        </p>
+        <figcaption>Pick</figcaption>
+        <p>10+ types of steaks done with special skills. Order some (or all) of these meals</p>
       </div>
-
-      <div class="column2">
+      <div class="content">
         <img src="static/images/delivery.png" style="width: 48%; height: 220px; border-radius: 35%" />
-        <p style="color: #eccbbf">
-          <b style=" font-size: 1.4vw;">Heat</b>
-        <div align="center">
-          <p style="font-size: 130%; width: 50%; ">Food delivery now becomes very simple. Order with our amazing app
-            now!</p>
-        </div>
-        </p>
+        <figcaption>Heat</figcaption>
+        <p>Food delivery now becomes very simple. Order with our amazing app now!</p>
       </div>
-
-      <div class="column3">
+      <div class="content">
         <img src="static/images/bakery.png" style="width: 48%; height: 220px; border-radius: 35%" />
-        <p style="color:#eccbbf"><b style=" font-size: 1.4vw">Eat</b></p>
-        <div align="center">
-          <p style="font-size: 130%;width: 50%; ">Microwave or Oven, No Cleaning Up. Adventurous & Healthy eating</p>
-        </div>
+        <figcaption>Eat</figcaption>
+        <p>Microwave or Oven, No Cleaning Up. Adventurous & Healthy eating</p>
       </div>
-
-      <div class="column4">
+      <div class="content">
         <img src="static/images/food.png" style="width: 48%; height: 220px; border-radius: 35%" />
-        <p style="text-align: center; color: #eccbbf">
-          <b style="font-size: 1.4vw">Repeat</b>
-        <div align="center">
-          <p style="font-size: 130%; width: 50%; ">Cooking techniques for perfectly grilled skirt steak, rib-eye,
-            filet mignon and more</p>
-        </div>
-        </p>
+        <figcaption>Repeat</figcaption>
+        <p>Cooking techniques for perfectly grilled skirt steak, rib-eye,
+          filet mignon and more</p>
       </div>
     </div>
     <!--figure 1.3-->
@@ -135,7 +117,6 @@
           excellent.
         </p>
       </figure>
-
       {{#each data}}
       <figure>
         <img src="/static/uploads/{{photo}}" />
@@ -144,12 +125,9 @@
         <h4>- {{category}} -</h4>
         <h5>{{meals_number}} meals</h5>
         <p>{{description}} </p>
-
       </figure>
       {{/each}}
     </div>
-
-
   </main>
 </body>
 
