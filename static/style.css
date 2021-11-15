@@ -183,7 +183,7 @@ a {
   z-index: 1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.47),
       rgba(0, 0, 0, 0.601)),
-    url("images/hero-one.jpg");
+    url("images/hero-one.webp");
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -200,7 +200,7 @@ a {
 
   background-image: linear-gradient(rgba(0, 0, 0, 0.5),
       rgba(0, 0, 0, 0.5)),
-    url("images/hero-two.jpg");
+    url("images/hero-two.webp");
 
   background-size: cover;
   background-repeat: no-repeat;
@@ -216,7 +216,7 @@ a {
   z-index: 1;
   background-image: linear-gradient(rgba(0, 0, 0, 0.47),
       rgba(0, 0, 0, 0.601)),
-    url("images/steakHero.jpg");
+    url("images/steakHero.webp");
 
   background-size: cover;
   background-repeat: no-repeat;
