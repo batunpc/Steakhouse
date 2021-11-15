@@ -43,7 +43,7 @@ router.post("/register", upload.single("photo"), (req, res) => {
       photo: req.file.filename
     }).then(() => {
       console.log("successfully created a new user");
-      res.redirect("register");
+      res.redirect("/#new_menu");
     }).catch(err => console.log(err))
 });
 
