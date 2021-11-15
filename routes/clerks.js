@@ -27,7 +27,7 @@ router.get("/register", (req, res) => {
   }).then((data) => {
     res.render("admin/clerkRegister", {
       title: "administrator",
-      layout: "userProfile",
+      layout: "admin",
       data: data
     });
   })

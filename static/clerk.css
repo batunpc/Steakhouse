@@ -35,6 +35,10 @@ ul {
   width: 110px
 }
 
+button:hover a {
+  color: #f17244;
+}
+
 article {
   background: linear-gradient(to right,
       hsl(16, 93%, 48%),

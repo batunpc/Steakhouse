@@ -3,7 +3,6 @@
 
 <head>
   <link rel="stylesheet" href="/static/clerk.css">
-  <title>Document</title>
 </head>
 
 <body>
@@ -47,15 +46,12 @@
                 </td>
                 <td style="vertical-align:middle;"> <input style="color:#f17244" type="submit" value="Update" /></td>
               </form>
-
-
               <td style="vertical-align:middle; ">
                 <form method="POST" action="deleteUser" enctype="multipart/form-data">
                   <input type="hidden" name="id" value="{{id}}" />
                   <input style="margin-top: 20px; color:#f17244" type="submit" value="Delete">
                 </form>
               </td>
-
             </tr>
             {{else}}
             <tr>
