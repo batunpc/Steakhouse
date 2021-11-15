@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/batunpc/Steakhouse">
-    <img src="./static/images/logo.png" alt="Logo" width="200" height="200">
+    <img src="./static/images/logo.webp" alt="Logo" width="200" height="200">
   </a>
 
 <h3 align="center">Meal delivery website - WEB322 Assignment 5</h3>
