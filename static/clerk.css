@@ -70,7 +70,6 @@ p {
   font-family: "Dank Mono", ui-monospace, monospace;
 }
 
-html {
-  block-size: 100%;
-  inline-size: 100%;
+#photo {
+  color: #f17244;
 }
