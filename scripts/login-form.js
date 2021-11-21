@@ -16,7 +16,7 @@ formSignIn.addEventListener('submit', event => {
   event.preventDefault();
   validateLogin();
   if (validateEmail(email_signIn.value) &&
-    validatePassword(password_signIn.value)) {
+    (!(password_signIn.value === ''))) { // only chechs if null exists in field
       event.currentTarget.submit();
   }
 });
@@ -48,8 +48,6 @@ validateLogin = () => {
   //=====
   if (passwordInput === '')
     errorMsg(password_signIn, 'Password is required')
-  else if((passwordInput.length < 6))
-    errorMsg(password_signIn, 'Password must be at least 6 characters')
   else 
     successMsg(password_signIn)
 }
