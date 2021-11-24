@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@1&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,300&display=swap');
 
 * {
   margin: 0;
@@ -14,13 +14,15 @@ html {
 
 li,
 a {
-  font-family: 'Poppins', sans-serif;
   color: #eccbbf;
   text-decoration: none;
   position: relative;
   width: auto;
   font-size: 20px;
   font-weight: 700;
+  list-style: none;
+  font-family: 'Poppins', sans-serif;
+  font-style: italic;
 }
 
 /** =========  Grid Navigation Bar  =========  */
@@ -423,26 +425,7 @@ a {
 }
 
 /* ========= figure 1.3========== */
-.containter_column_mealpac {
-  display: flex;
-  background-color: #303135;
-  justify-content: center;
-  padding: 72px;
-  display: relative;
-}
 
-.mealpac_column1,
-.mealpac_column2,
-.mealpac_column3,
-.mealpac_column4 {
-  padding: 40px;
-  text-align: center;
-  cursor: pointer;
-  justify-content: center;
-
-  width: 300px;
-  height: 550px;
-}
 
 /* === Footer === */
 .footer_container {
@@ -454,17 +437,14 @@ a {
   font-family: 'Poppins', sans-serif;
   background-color: #24252a;
   padding: 95px;
-  bottom: 0px;
   margin-bottom: 0px;
 }
+
+
 
 .row {
   display: flex;
   flex-wrap: wrap;
-}
-
-ul {
-  list-style: none;
 }
 
 
@@ -494,6 +474,8 @@ ul {
 
 .footer_column ul li a {
   transition: all 0.4s ease;
+  list-style: none;
+
 }
 
 .footer_column ul li a:hover {
