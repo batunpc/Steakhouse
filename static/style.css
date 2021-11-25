@@ -423,8 +423,6 @@ a {
 .grid img {
   border: 2px solid rgb(194, 193, 193);
   box-shadow: 5px 5px 7px 7px rgba(0, 0, 0, 0.371);
-  max-width: 75%;
-  height: 310px;
   border-radius: 20px;
   border: none;
 }
