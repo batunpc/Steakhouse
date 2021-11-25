@@ -12,6 +12,8 @@ html {
   scroll-behavior: smooth;
 }
 
+
+
 li,
 a {
   color: #eccbbf;
@@ -173,7 +175,6 @@ a {
 }
 
 
-
 .hero-one {
   top: 0;
   position: absolute;
@@ -230,6 +231,7 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-weight: 700;
 }
 
 .header-title-mealpac {
@@ -244,10 +246,11 @@ a {
 }
 
 .header-primary {
-  font-size: 2em;
+  font-size: 2.2em;
   display: block;
-  font-weight: 700;
+
 }
+
 
 /* hero button */
 .fill-btn {
@@ -303,10 +306,10 @@ a {
 
 
 /* ========= figure 1.2========== */
+/* pick heat eat repeat */
 .grid-content {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-gap: 2px;
   background-color: #303135;
   align-items: stretch;
 }
@@ -317,6 +320,12 @@ a {
   justify-items: center;
   margin: 50px 0px;
   color: #eccbbf;
+}
+
+
+.grid-content .content img {
+  width: 50%;
+  border-radius: 20%
 }
 
 .grid-content figcaption {
@@ -342,10 +351,10 @@ a {
 
 
 /* ========= figure 1.3========== */
-
+/* meals */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   grid-gap: 10px;
   background-color: #303135;
   align-items: stretch;
@@ -354,7 +363,6 @@ a {
 
 .grid figure {
   display: grid;
-  align-items: stretch;
   justify-items: center;
   margin: 25px 0px;
   color: #eccbbf;
@@ -409,14 +417,15 @@ a {
   line-height: 30px;
   font-family: Arial, Helvetica, sans-serif;
   padding: 0px 5px;
+  width: 80%;
 }
 
 .grid img {
   border: 2px solid rgb(194, 193, 193);
-  box-shadow: 5px 5px 7px 7px rgba(0.3, 0.3, 0.3, 0.3);
+  box-shadow: 5px 5px 7px 7px rgba(0, 0, 0, 0.371);
   max-width: 75%;
   height: 310px;
-  border-radius: 10px;
+  border-radius: 20px;
   border: none;
 }
 
@@ -439,7 +448,6 @@ a {
   padding: 95px;
   margin-bottom: 0px;
 }
-
 
 
 .row {
@@ -486,30 +494,24 @@ a {
 .social-links {
   margin-right: 50px;
   width: auto;
-
-}
-
-.social-links i {
-  line-height: 2.4em;
-
 }
 
 .social-links a {
   display: inline-block;
   height: 50px;
   width: 50px;
-  background-color: #27282c;
   text-align: center;
-  color: #ffff;
+  color: #eccbbf;
   border-radius: 50%;
-  transition: all 0.5s ease;
   font-weight: 100px;
   margin-right: 10px;
+  transition: all 0.4s ease;
 }
 
+
 .social-links a:hover {
-  color: #24252a;
-  background-color: #ffff;
+  color: #fff;
+  transform: translateY(-5px);
 }
 
 @media(max-width: 700px) {

@@ -7,16 +7,19 @@
 <body>
   <div class="form_container">
     <fieldset>
-      <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244"
-            class=" fa fa-user-circle fa-2x"></i></span>
-        Customer Login</legend>
+      <legend>
+        <i class="fa fa-user-circle fa-2x"></i>
+        <span style="margin: auto;">
+          Customer Login
+        </span>
+      </legend>
       <div class="social-links-form">
         <a href=""><i class="fa fa-google fa-2x"></i></a>
         <a href=""><i class="fa fa-github fa-2x"></i></a>
         <a href=""><i class="fa fa-twitter fa-2x"></i></a>
         <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
       </div>
-      <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
+      <div style="width: 100%; height: 12px; border-bottom: 1px solid #eccbbf; text-align: center;">
         <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
           or
         </span>
@@ -30,7 +33,7 @@
           {{/if}}
         </div>
         <p>
-          <label for="email" style="margin-top: 20px;">
+          <label for="email" style="margin-top: 10px;">
             <input type="email" id="email" name="email" placeholder="Your Email *" value="{{dataLogin.email}}" required>
             <span class="isValid"></span>
           </label>
@@ -54,7 +57,7 @@
         for administrators
       </span>
     </div>
-    <button class="register-btn" style="width:150px; margin: 20px 82px; border-color:#f17244">
+    <button class="register-btn" style="width:180px; margin: 20px 70px; border-color:#f17244">
       <a href="/clerk/register"><span>Clerk Entry</span></a>
     </button>
   </div>
