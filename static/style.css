@@ -427,6 +427,7 @@ a {
   height: 310px;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
 }
 
 .grid figure a {
