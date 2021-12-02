@@ -40,18 +40,18 @@
     </button>
     {{else}}{{!-- if customer registered/logged in --}}
     <span class="nav_icons">
-      <li> <a href="/#menu"> <i class="fa fa-search"></i></a></li>
-      <li> <a href="/#menu"><i class="fa fa-shopping-cart"></i></a></li>
+      <li> <a href="/#menu"> <i class="fas fa-search"></i></a></li>
+      <li> <a href="/#menu"><i class="fas fa-shopping-cart"></i></a></li>
     </span>
     <li> <a href="/users/loginDashboard" style="padding:11px"> {{User.username}} <i class="fa fa-home"></i></a></li>
     {{/if}}
     {{else}}{{!-- default --}}
     <span class="nav_icons">
-      <li> <a href="/users/loginForm"> <i class="fa fa-shopping-cart"></i></a></li>
-      <li> <a href="/client/loginForm"> <i class="fa fa-search"></i></a></li>
+      <li> <a href="/users/loginForm"> <i class="fas fa-shopping-cart"></i></a></li>
+      <li> <a href="/client/loginForm"> <i class="fas fa-search"></i></a></li>
     </span>
-    <li> <a href="/users/login" style="padding:20px">Sign in <i class="fas fa-sign-in"></i></a> </li>
-    {{/if}}
+    <li> <a href="/users/login" style="padding:12px; line-height:10px">Sign in <i class="fas fa-sign-in-alt"></i></a>
+      {{/if}}
   </div>
 </nav>
 

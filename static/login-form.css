@@ -126,7 +126,6 @@ body {
 }
 
 .social-links-form {
-
   text-align: center;
   display: inline-block;
   display: flex;
@@ -137,15 +136,13 @@ body {
 
 .social-links-form a {
   display: inline-block;
-  background-color: #27282c;
   margin: 0 10px;
-  color: #ffff;
+  color: #eccbbf;
   border-radius: 50%;
   transition: all .5s ease;
-  padding: 7px 10px;
+  padding: 10px;
 }
 
 .social-links-form a:hover {
-  color: #24252a;
-  background-color: #ffff;
+  color: #ffff;
 }
