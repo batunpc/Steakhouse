@@ -1,11 +1,12 @@
 const express = require("express");
 const exphbs = require("express-handlebars");
 const server = express();
+const User =require("./config/database")
+const session = require('express-session')
 
 //Static Files
 server.use("/static", express.static(`${__dirname}/static`));
 server.use("/scripts", express.static(`${__dirname}/scripts`));
-
 //Database and test
 const db = require('./config/database')
 db
@@ -28,6 +29,19 @@ server.engine(".hbs", exphbs({
   extname: ".hbs",
   defaultLayout: "main"
 }));
+//express-sessions
+server.use(session({
+  secret:"mysecret",
+  resave:false,
+  saveUninitialized:true
+}))
+//locals
+server.use((req, res, next)=>{
+  //every hbs file will have access to User and session variable
+  res.locals.User=req.session.User;
+  res.locals.session=req.session;
+  next();
+})
 
 // main routes
 server.use('/', require('./routes/main'))

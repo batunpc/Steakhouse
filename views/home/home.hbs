@@ -18,12 +18,42 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Home | Batu Steak House</title>
-  <link rel="shortcut icon" type="image/png" href="/static/icon/web_icon.png">
-  <link rel="stylesheet" href="/static/style.css" />
-  <link rel="stylesheet" href="https://use.typekit.net/okg8dxw.css">
-
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
+<nav class="navbar" style="position: fixed;">
+  <div class="brand_logo">
+    <a href="/">
+      <img class="logo" src="/static/images/logo.webp" style="width:150px" alt="Batu's SteakHouse" />
+    </a>
+  </div>
+  <ul class="nav_links" style="margin-top:7px">
+    <li><a href="/">Home</a></li>
+    <li><a href="/mealPack">Meals Package</a></li>
+    <li><a href="#">Grocery</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+  <div class="nav_btns" style="margin-top:9px">
+    {{#if User.username}}
+    {{#if User.isAdminToBool}}{{!-- if admin registered --}}
+    <button class="register-btn" style="width:170px; border-color:#f17244">
+      <a href="/clerk/register"><span>Clerk Entry</span></a>
+    </button>
+    {{else}}{{!-- if customer registered/logged in --}}
+    <span class="nav_icons">
+      <li> <a href="/#menu"> <i class="fa fa-search"></i></a></li>
+      <li> <a href="/#menu"><i class="fa fa-shopping-cart"></i></a></li>
+    </span>
+    <li> <a href="/users/loginDashboard" style="padding:11px"> {{User.username}} <i class="fa fa-home"></i></a></li>
+    {{/if}}
+    {{else}}{{!-- default --}}
+    <span class="nav_icons">
+      <li> <a href="/users/loginForm"> <i class="fa fa-shopping-cart"></i></a></li>
+      <li> <a href="/client/loginForm"> <i class="fa fa-search"></i></a></li>
+    </span>
+    <li> <a href="/users/login" style="padding:20px">Sign in <i class="fas fa-sign-in"></i></a> </li>
+    {{/if}}
+  </div>
+</nav>
 
 <body>
   <main>
@@ -32,7 +62,7 @@
     <div class='hero'>
       <div class="hero-one"></div>
       <div class="hero-two"></div>
-      <h1 class="header-title"><span class="header-primary">Chef Batu Recipes</span>and the
+      <h1 class="header-title"><span class="header-primary">Chef Batu Recipes <br></span> and the
         underground secrets</h1>
       <button type="button" class="fill-btn"><a href="#menu"><b>Order Now!</b></a></button>
     </div>

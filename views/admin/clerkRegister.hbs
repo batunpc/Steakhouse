@@ -4,7 +4,6 @@
 <head>
   <link rel="stylesheet" href="/static/clerk.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
 </head>
 
 <body>
@@ -73,22 +72,26 @@
       <p>Create and update meal packages</p>
     </article>
     <br>
-    <form action="/clerk/register" method="POST" enctype="multipart/form-data">
-      <input style="width: 330px" id="mealName" type="text" name="mealName" placeholder="Meal Package name *"
-        required />
-      <input style="width: 170px" id="price" type="number" name="price" placeholder="Meal Package price *"
-        required /><br />
-      <div>
-        <textarea name="description" id="description" cols="84" rows="10"></textarea>
+    <div class="row">
+      <div class="col-md-5 mx-auto">
+        <form action="/clerk/register" method="POST" enctype="multipart/form-data">
+          <input style="width: 330px" id="mealName" type="text" name="mealName" placeholder="Meal Package name *"
+            required />
+          <input style="width: 170px" id="price" type="number" name="price" placeholder="Meal Package price *"
+            required /><br />
+          <div>
+            <textarea name="description" id="description" cols="84" rows="10"></textarea>
+          </div>
+          <input style="width:330px" id="category" type="text" name="category" placeholder="Food Category *" required />
+          <input style="width: 170px" id="meals_number" type="number" name="meals_number"
+            placeholder="Number of Meals *" /><br />
+          <input id="photo" type="file" name="photo" placeholder="Photo" /><br required />
+          <button class="register-btn" type="submit">
+            <span style="line-height: normal;">Create Record </span>
+          </button>
+        </form>
       </div>
-      <input style="width:330px" id="category" type="text" name="category" placeholder="Food Category *" required />
-      <input style="width: 170px" id="meals_number" type="number" name="meals_number"
-        placeholder="Number of Meals *" /><br />
-      <input id="photo" type="file" name="photo" placeholder="Photo" /><br required />
-      <button class="register-btn" type="submit">
-        <span style="line-height: normal;">Create Record </span>
-      </button>
-    </form>
+    </div>
   </div>
 </body>
 

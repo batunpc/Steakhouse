@@ -4,7 +4,10 @@ td {
 }
 
 th {
-  color: #eccbbf
+  color: #eccbbf;
+  font-size: 25px;
+  font-family: 'Amatic SC', cursive;
+
 }
 
 .tableContainer {
@@ -35,7 +38,7 @@ ul {
   width: 110px
 }
 
-button:hover a {
+.button:hover a {
   color: #f17244;
 }
 
@@ -45,7 +48,7 @@ article {
       hsl(24, 40%, 67%));
   background-clip: borde;
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  -webkit-text-fill-color: #f17244;
   text-align: center;
 }
 

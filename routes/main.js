@@ -1,9 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const path = require("path");
-const multer = require("multer");
-const db = require('../config/database')
 const Clerk = require('../models/Clerk');
+const session = require('express-session');
 
 //home
 router.get("/", (req, res) => {

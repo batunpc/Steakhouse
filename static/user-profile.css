@@ -4,7 +4,6 @@
   font-weight: 270;
 }
 
-
 td {
   color: #f17244;
 }
@@ -12,4 +11,46 @@ td {
 tr>th {
   color: #eccbbf;
   text-align: center;
+}
+
+
+
+.container button:hover a {
+  color: #f17244;
+}
+
+
+/* dashboard for register */
+table {
+  width: 100%;
+}
+
+th {
+  font-family: 'Amatic SC', cursive;
+  font-size: 27px;
+  height: 70px;
+  text-align: center;
+}
+
+td {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 250
+}
+
+span {
+  font-style: italic;
+  font-size: 17px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.content {
+  font-style: normal;
+  font-size: 17px;
+  color: #f17244
+}
+
+/* dashboard logib */
+h3>span {
+  font-size: 25px;
 }

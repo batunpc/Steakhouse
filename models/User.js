@@ -2,7 +2,7 @@ const Sequelize = require('sequelize');
 const db = require('../config/database')
 
 //USER model
-const User = db.define('Customer', {
+const User = db.define('User', {
   user_id: {
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -11,11 +11,8 @@ const User = db.define('Customer', {
   username: Sequelize.STRING,
   lastname: Sequelize.STRING,
   email: Sequelize.STRING,
-  password: Sequelize.STRING
-}, {
-  //disabling default behavior
-  createdAt: false,
-  updatedAt: false
+  password: Sequelize.STRING,
+  is_admin: Sequelize.BOOLEAN,
 })
 
 

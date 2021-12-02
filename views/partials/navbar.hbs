@@ -1,0 +1,50 @@
+{{!-- this nav bar is designed for login form --}}
+<!--grid navigation bar -->
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/login-form.css">
+  <link rel="stylesheet" href="/static/register-form.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+
+<header>
+  <nav class="navbar" style="grid-template-columns: .4fr 1.4fr .7fr;">
+    <div class="brand_logo">
+      <a href="/">
+        <img class="logo" src="/static/images/logo.webp" style="width:150px" alt="Batu's SteakHouse" />
+      </a>
+    </div>
+    <ul class="nav_links" style="margin-top:15px">
+      <li><a href="/">Home</a></li>
+      <li><a href="/mealPack">Meals Package</a></li>
+      <li><a href="#">Grocery</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <div class="nav_btns" style="margin-top:17px">
+      {{#if User.username}}
+      {{#if User.is_admin}}{{!-- if admin registered --}}
+      <button class="register-btn" style="width:170px; border-color:#f17244;">
+        <a href="/clerk/register"><span>Clerk Entry</span></a>
+      </button>
+      <li> <a href="/users/loginDashboard" style="padding:10px"> {{User.username}} <i class="fa fa-home"></i></a></li>
+
+      {{else}}{{!-- if customer registered/logged in --}}
+      <span class="nav_icons">
+        <li> <a href="/#menu"> <i class="fa fa-search"></i></a></li>
+        <li> <a href="/#menu"><i class="fa fa-shopping-cart"></i></a></li>
+      </span>
+      <li> <a href="/users/loginDashboard" style="padding:11px"> {{User.username}} <i class="fa fa-home"></i></a></li>
+      {{/if}}
+      {{else}}{{!-- default --}}
+      <span class="nav_icons">
+        <li> <a href="/users/loginForm"> <i class="fa fa-shopping-cart"></i></a></li>
+        <li> <a href="/client/loginForm"> <i class="fa fa-search"></i></a></li>
+      </span>
+      <li> <a href="/users/login" style="padding:20px">Sign in <i class="fas fa-sign-in"></i></a> </li>
+      {{/if}}
+    </div>
+  </nav>
+</header>

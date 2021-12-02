@@ -22,8 +22,44 @@
     <title>Meals Package | Batu Steak House</title>
     <link rel="stylesheet" href="/static/style.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   </head>
+
+  <nav class="navbar" style="position: fixed;">
+    <div class="brand_logo">
+      <a href="/">
+        <img class="logo" src="/static/images/logo.webp" style="width:150px" alt="Batu's SteakHouse" />
+      </a>
+    </div>
+    <ul class="nav_links" style="margin-top:7px">
+      <li><a href="/">Home</a></li>
+      <li><a href="/mealPack">Meals Package</a></li>
+      <li><a href="#">Grocery</a></li>
+      <li><a href="#">About</a></li>
+    </ul>
+    <div class="nav_btns" style="margin-top:9px">
+      {{#if User.username}}
+      {{#if User.is_admin}}{{!-- if admin registered --}}
+      <button class="register-btn" style="width:170px; border-color:#f17244;">
+        <a href="/clerk/register"><span>Clerk Entry</span></a>
+      </button>
+      <li> <a href="/users/loginDashboard" style="padding:10px"> {{User.username}} <i class="fa fa-home"></i></a></li>
+
+      {{else}}{{!-- if customer registered/logged in --}}
+      <span class="nav_icons">
+        <li> <a href="/#menu"> <i class="fa fa-search"></i></a></li>
+        <li> <a href="/#menu"><i class="fa fa-shopping-cart"></i></a></li>
+      </span>
+      <li> <a href="/users/loginDashboard" style="padding:11px"> {{User.username}} <i class=" fa fa-home"></i></a></li>
+      {{/if}}
+      {{else}}{{!-- default --}}
+      <span class="nav_icons">
+        <li> <a href="/users/loginForm"> <i class="fa fa-shopping-cart"></i></a></li>
+        <li> <a href="/client/loginForm"> <i class="fa fa-search"></i></a></li>
+      </span>
+      <li> <a href="/users/login" style="padding:20px">Sign in <i class="fas fa-sign-in"></i></a> </li>
+      {{/if}}
+    </div>
+  </nav>
 
 <body>
   <main>
@@ -42,22 +78,22 @@
     <div class="grid">
       <figure>
         <img src="static/images/weightloss.webp" alt="weightL" />
-        <h2>- Weight Loss-</h2>
+        <h2>Weight Loss</h2>
         <p>High protein, low-calorie meals nutrient profile tuned for weight loss.</p>
       </figure>
       <figure>
         <img src="static/images/musclegain.webp" alt="muscleG" />
-        <h2>- Muscle Gain -</h2>
+        <h2>Muscle Gain</h2>
         <p>Higher protein to support your muscle gain and calorie deficit.</p>
       </figure>
       <figure>
         <img src="static/images/keto.webp" alt="Keto" />
-        <h2>- Keto -</h2>
+        <h2>Keto</h2>
         <p>High fat, low carb meals with moderateprotein to sustain ketosis.</p>
       </figure>
       <figure>
         <img src="static/images/fatburner.webp" alt="fat" />
-        <h2>- Fat Burner -</h2>
+        <h2>Fat Burner</h2>
         <p>Low carb, nutrient-rich meals with fat-burning profiles for fat loss.</p>
       </figure>
 

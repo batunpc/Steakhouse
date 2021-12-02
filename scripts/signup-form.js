@@ -1,4 +1,5 @@
 const formSignup = document.getElementById('signup_form');
+
 const username = document.getElementById('username');
 const lastname = document.getElementById('lastname');
 const email_signup = document.getElementById('email');

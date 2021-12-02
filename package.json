@@ -6,11 +6,12 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Batuhan Ipci",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
     "express-validator": "^6.13.0",
     "multer": "^1.4.3",
     "nodemon": "^2.0.13",
@@ -27,5 +28,5 @@
     "url": "https://github.com/batunpc/steakhouse-website/issues"
   },
   "homepage": "https://github.com/batunpc/steakhouse-website#readme",
-  "description": ""
+  "description": "website created by Batuhan Ipci"
 }

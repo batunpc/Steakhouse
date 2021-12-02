@@ -5,22 +5,26 @@
 </header>
 
 <div class="modal-left">
-  <img id="modal-img-left" src="../static/svg/modal-right.svg" alt="">
+  <img id="modal-img-left" src="/static/svg/modal-right.svg" alt="">
 </div>
 <div class="modal-right">
-  <img id="modal-img-right" src="../static/svg/modal-left.svg" alt="">
+  <img id="modal-img-right" src="/static/svg/modal-left.svg" alt="">
 </div>
 <div class="form_container">
   <fieldset>
     <p><a class="close" title="Reset the register form" onclick="ResetForm()" id="closeMe" rel="nofollow">&times;</a>
     </p>
-    <legend> <span style="padding-right: 12px ;"> <i style="color:#f17244" class=" fa fa-user-circle fa-2x"></i></span>
-      Create Account</legend>
+    <legend>
+      <i style="color:#eb4f37" class="fa fa-user-circle fa-2x"></i>
+      <span style="margin: auto;">
+        Create Your Account
+      </span>
+    </legend>
     <div class="social-links-form">
       <a href=""><i class="fa fa-google fa-2x"></i></a>
       <a href=""><i class="fa fa-github fa-2x"></i></a>
       <a href=""><i class="fa fa-twitter fa-2x"></i></a>
-      <a href=""><i class="fa fa-pinterest fa-2x"></i></a>
+      <a href=""><i class="fa fa-linkedin fa-2x"></i></a>
     </div>
     <div style="width: 100%; height: 17px; border-bottom: 1px solid #eccbbf; text-align: center;">
       <span style="font-size: 15px; background-color: #24252a; color:#eccbbf; padding: 0px 17px;">
@@ -28,8 +32,28 @@
       </span>
     </div>
     <form id="signup_form" method="POST" novalidate>
+      {{!-- user-types --}}
+      <br>
+      <input type="radio" name="is_admin" id="customer" value="client">
+      <input type="radio" name="is_admin" id="admin" value="admin">
+      <div class="switch">
+        <label for="customer">Customer</label>
+        <label for="admin">Administrator</label>
+      </div>
+      {{#if userTypeErr}}
+      {{#each userTypeErr}}
+      <span class="userTypeErr">{{this.msg}}</span>
+      {{/each}}
+      {{/if}}
+      {{#if registerErr}}
+      {{#each registerErr}}
+      <span class="userTypeErr">{{this.msg}}</span>
+      {{/each}}
+      {{/if}}
+      {{!-- user-types --}}
+      <br>
       <p class="isValid">
-        <label for="name">
+        <label style="margin-top:4px" for="name">
           <input type="text" id="username" name="username" placeholder="First Name *" value="{{data.username}}">
           <span class="signup_error"></span>
         </label>
@@ -46,20 +70,17 @@
           <span class="signup_error"></span>
         </label>
       </p>
-      {{#if registerErr}}
-      {{#each registerErr}}
-      <span class="error_emailDpl">{{this.msg}}</span>
-      {{/each}}
-      {{/if}}
-
       <p class="isValid">
-        <label for="password" style="padding-bottom: 35px">
+        <label for="password">
           <input type="password" id="password" name="password" placeholder="Password *" value="{{data.password}}">
           <span class="signup_error"></span>
         </label>
       </p>
-      <button type="submit" class="register-btn"><span>Create New Account</span></button>
-      <script type="text/javascript" src="/scripts/signup-form.js"></script>
+
+      <div style="margin-top:52px">
+        <button type="submit" class="register-btn"><span>Create New Account</span></button>
+        <script type="text/javascript" src="/scripts/signup-form.js"></script>
+      </div>
 
 </div>
 </form>

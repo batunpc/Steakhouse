@@ -3,33 +3,49 @@
 
 
 <head>
-  <title>{{username}} | Dashboard</title>
-  <link rel="stylesheet" href="/static/clerk.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 </head>
 
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/style.css" />
+  <link rel="stylesheet" href="/static/login-form.css">
+  <link rel="stylesheet" href="/static/register-form.css">
+  <link rel="stylesheet" href="/static/user-profile.css">
+</head>
+
+
+
 <body>
-  <div style="margin: 40px">
+  <div style="margin: 45px">
     <div class="container" style="color:#ffff">
-      <h3>Hello <span class="user_greet">{{email}}</span>
+      <h3>Hello <span class="user_greet">{{userSaved.username}}</span>
       </h3>
+
       <span>Welcome to your profile!</span>
-      <p>We are excited to see you with us!</p>
-      <p>Here is the information we have on file for you:</p>
+      <p class="content">
+        You have successfully been registered to <span style="color:#eb4f37; font-size:18px;">Batu's Steakhouse!</span>
+      </p>
+
+      <p style="font-family: monospace; color:#eccbbf; font-size: 15px;">=> Here is the information we have on file for
+        you:</p>
 
       <table>
         <tr>
+          <th>Administrator</th>
           <th>Username</th>
           <th>Lastname</th>
           <th>Email</th>
           <th>Meat lover</th>
         </tr>
         <tr>
-          <td>{{username}}</td>
-          <td> {{lastname}}</td>
-          <td> {{email}}</td>
-          <td>yes</td>
+          <td>{{userSaved.is_admin}}</td>
+          <td>{{userSaved.username}}</td>
+          <td> {{userSaved.lastname}}</td>
+          <td> {{userSaved.email}}</td>
+          <td>yes :)</td>
         </tr>
       </table>
     </div>

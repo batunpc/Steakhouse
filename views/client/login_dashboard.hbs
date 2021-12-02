@@ -2,9 +2,9 @@
 <html>
 
 <head>
-  <title>{{email}} | Dashboard</title>
-  <link rel="stylesheet" href="/static/clerk.css">
+  <title>{{userlogin.username}}'s Profile</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/static/user-profile.css">
 
 </head>
 
@@ -12,15 +12,15 @@
   <div class="container">
     <h3 style="margin-top: 40px">
       <span style="color:#fff">Welcome back, </span>
-      <span class="user_greet">{{email}}</span>
+      <span style="color:#f17244; font-style:italic">{{userlogin.email}}</span>
     </h3>
     <h4 style="color:#eccbbf" id="spanDate"></h4>
     <script type="text/javascript" src="/scripts/displayDate.js"></script>
   </div>
   <div class="container">
-    <button class="pull-right"><a href="/">Logout</a></button>
+    <button class="pull-right"><a href="/users/logout">Logout</a></button>
+    <button class="pull-left"><a href="/#menu">Browse Meals</a></button>
   </div>
-
 </body>
 
 </html>
