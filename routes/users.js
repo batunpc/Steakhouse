@@ -16,13 +16,21 @@ router.use(session({
   saveUninitialized:true
 }))
 
+ensureLogin = (req, res, next)=> {
+  if (!req.session.User) {
+    res.redirect("/login");
+  } else {
+    next();
+  }
+}
+
 ///////////////////////////////////////
 // === REGISTER VALIDATION ===
 router.get('/register', (req, res) =>
   User.findAll()
   .then(users => {
     res.render("client/registerForm", {
-      title: "userForms",
+      title: "Sign up",
       layout: "forms"
     })
     //console.log(users) // lists all registered users to console
@@ -108,7 +116,7 @@ router.post('/register',
 router.get('/registeredProfile', (req, res)=>{
   var userSaved = req.session.User;
   res.render("client/register_dashboard", {
-    title: "Welcome_profile",
+    title: `${userSaved.username}'s profile`,
     layout: "forms",
     userSaved
   })
@@ -120,7 +128,7 @@ router.get('/login', (req, res) =>
   User.findAll()
   .then(users => {
     res.render("client/loginForm", {
-      title: "userForms",
+      title: "Sign in",
       layout: "forms"
     })
   })
@@ -199,10 +207,10 @@ router.post('/login',
     }
   })
 
-router.get('/loginDashboard', (req, res)=>{
+router.get('/loginDashboard', ensureLogin, (req, res)=>{
   var userlogin = req.session.User
   res.render('client/login_dashboard',{
-    title:`Dashboard`,
+    title:`${userlogin.email}`,
     layout:"forms",
     userlogin
   })

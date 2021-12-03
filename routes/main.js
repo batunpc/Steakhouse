@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     order: ["id"]
   }).then((data) => {
     res.render("home/home", {
-      title: "homePageUpdate",
+      title: "Batu's Steakhouse",
       layout: "main",
       data: data
     });
@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 //Meals Package
 router.get("/mealPack", (req, res) => {
   res.render("home/mealPack", {
-    title: "mealPack"
+    title: "Meal Packages | Batu's Steakhouse"
   })
 });
 

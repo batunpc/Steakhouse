@@ -11,7 +11,7 @@
 
 
 <header>
-  <nav class="navbar" style="grid-template-columns: .4fr 1.4fr .7fr;">
+  <nav class="navbar" style="grid-template-columns: .4fr 1.4fr .6fr;">
     <div class="brand_logo">
       <a href="/">
         <img class="logo" src="/static/images/logo.webp" style="width:150px" alt="Batu's SteakHouse" />
@@ -29,7 +29,8 @@
       <button class="register-btn" style="width:170px; border-color:#f17244;">
         <a href="/clerk/register"><span>Clerk Entry</span></a>
       </button>
-      <li> <a href="/users/loginDashboard" style="padding:10px"> {{User.username}} <i class="fa fa-home"></i></a></li>
+      <li> <a href="/users/loginDashboard" style="padding:10px; margin-right:25px;"> {{User.username}} <i
+            class="fa fa-home"></i></a></li>
 
       {{else}}{{!-- if customer registered/logged in --}}
       <span class="nav_icons">
