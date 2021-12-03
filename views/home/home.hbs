@@ -34,21 +34,23 @@
   </ul>
   <div class="nav_btns" style="margin-top:9px">
     {{#if User.username}}
-    {{#if User.isAdminToBool}}{{!-- if admin registered --}}
+    {{#if User.is_admin}}{{!-- if admin registered --}}
     <button class="register-btn" style="width:170px; border-color:#f17244">
       <a href="/clerk/register"><span>Clerk Entry</span></a>
     </button>
+    <li> <a href="/users/loginDashboard" style="padding:10px; margin-right:25px;"> {{User.username}} <i
+          class="fa fa-home"></i></a></li>
     {{else}}{{!-- if customer registered/logged in --}}
     <span class="nav_icons">
-      <li> <a href="/#menu"> <i class="fas fa-search"></i></a></li>
-      <li> <a href="/#menu"><i class="fas fa-shopping-cart"></i></a></li>
+      <li> <a href=""> <i class="fas fa-search"></i></a></li>
+      <li> <a href=""><i class="fas fa-shopping-cart"></i></a></li>
     </span>
     <li> <a href="/users/loginDashboard" style="padding:11px"> {{User.username}} <i class="fa fa-home"></i></a></li>
     {{/if}}
     {{else}}{{!-- default --}}
     <span class="nav_icons">
-      <li> <a href="/client/loginForm"> <i class="fas fa-search"></i></a></li>
-      <li> <a href="/users/loginForm"> <i class="fas fa-shopping-cart"></i></a></li>
+      <li> <a href=""> <i class="fas fa-search"></i></a></li>
+      <li> <a href=""> <i class="fas fa-shopping-cart"></i></a></li>
     </span>
     <li> <a href="/users/login" style="padding:12px; line-height:10px">Sign in <i class="fas fa-sign-in-alt"></i></a>
       {{/if}}
@@ -64,7 +66,9 @@
       <div class="hero-two"></div>
       <h1 class="header-title"><span class="header-primary">Chef Batu Recipes <br></span> and the
         underground secrets</h1>
-      <button type="button" class="fill-btn"><a href="#menu"><b>Order Now!</b></a></button>
+      <button type="button" class="fill-btn"><a href="#menu"><b>Order Now
+            <i class="fas fa-utensils"></i>
+      </button>
     </div>
     <!-- =========  Hero Section  =========-->
 

@@ -76,14 +76,14 @@ a {
   border-radius: 7%;
   transition: all 0.5s ease;
   white-space: nowrap;
-  border: solid 1px #eccbbf;
+  border: solid 1px #ff4500;
   text-align: center;
   line-height: 1px;
 }
 
 .nav_btns li>a:hover {
-  color: #24252a;
-  background-color: #eccbbf;
+  color: #fff;
+  background-color: #303135;
 }
 
 .nav_icons {

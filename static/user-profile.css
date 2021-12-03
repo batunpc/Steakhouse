@@ -1,9 +1,3 @@
-.user_greet {
-  color: #f17244;
-  font-style: italic;
-  font-weight: 270;
-}
-
 td {
   color: #f17244;
 }
@@ -13,14 +7,27 @@ tr>th {
   text-align: center;
 }
 
-
-
 .container button:hover a {
   color: #f17244;
 }
 
+.container button:hover {
+  background: #24252a;
+
+}
+
+.container .pull-right {
+  float: right;
+}
 
 /* dashboard for register */
+
+.user_greet {
+  color: #f17244;
+  font-style: italic;
+  font-weight: 270;
+}
+
 table {
   width: 100%;
 }
