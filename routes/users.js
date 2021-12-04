@@ -74,6 +74,7 @@ router.post('/register',
             msg: "Provided email has already registered"
           })
           res.render("client/registerForm", {
+            "title": "Sign up",
             data: req.body,
             registerErr,
             layout: "forms"
@@ -104,7 +105,9 @@ router.post('/register',
             password: password,
             is_admin: isAdminToBool,
         }).then((userSaved)=>{
-          console.log(`=> User ${userSaved.username} has registered`)
+          if (isAdminToBool) 
+            console.log(`=> Administrator: "${userSaved.username}" has registered`)
+          else console.log(`=> Customer: "${userSaved.username}" has registered`)
           req.session.User=userSaved;
           res.redirect("registeredProfile")
         }).catch((error)=>{
@@ -185,6 +188,7 @@ router.post('/login',
               msg: "We cannot find an account with the provided credentials. Please create your account below"
             })
             res.render("client/loginForm", {
+              title:"Sign in",
               dataLogin: req.body,
               loginErr,
               email,

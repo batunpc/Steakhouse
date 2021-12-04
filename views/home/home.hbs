@@ -111,6 +111,8 @@
     </div>
 
     <!-- == figure 1.3 == top meals-->
+    <a name="new_menu"></a>
+
     <div class="grid">
       <figure>
         <img src="static/images/mushroom.webp" alt="tbone">
@@ -137,9 +139,8 @@
         <span>42.70 <i class="fas fa-euro-sign"></i></span>
         <h4>- Muscle Gain Meal -</h4>
         <h5>2 meals</h5>
-        <p>
-          Classic 1950s staple of American cooking with Russian origins has been enhanced with a splash of fish
-          sauce for depth and umami. “You can’t taste it, but you need it.”</p>
+        <p>Classic 1950s staple of American cooking with Russian origins enhanced with a splash of fish
+          sauce for depth and umami. "You can’t taste it but you need it."</p>
       </figure>
       <figure>
         <img src="static/images/noodle.webp" alt="tunasteak">
@@ -154,7 +155,6 @@
       </figure>
       {{#each data}}
       <figure>
-        <a name="new_menu"></a>
 
         <img src="/static/uploads/{{photo}}" />
         <figcaption>-{{mealName}}-</figcaption>

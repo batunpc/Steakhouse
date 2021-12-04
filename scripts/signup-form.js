@@ -10,7 +10,7 @@ validateEmail = (email_signup) => {
   return /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/.test(email_signup);
 }
 validateUsername = (username) => {
-  return /^[a-zA-Z0-9_-]{3,15}$/.test(username);
+  return /^[a-zA-Z0-9-_( )]{3,12}$/.test(username);
 }
 validatePassword = (password) => {
   return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/.test(password);
@@ -48,9 +48,13 @@ validateInput = () => {
 
   if (usernameInput === '')
     errorMsg(username, 'Username is required')
-  else if (!(validateUsername(usernameInput)))
-    errorMsg(username, 'Username must be at least 3 characters')
-  else 
+  else if(usernameInput.length < 3)
+    errorMsg(username, "Username must be at least 3 characters")
+  else if (usernameInput.length > 12)
+    errorMsg(username, 'Username can be max 12 characters')
+  else if(!(validateUsername(usernameInput))) 
+    errorMsg(username, 'Invalid characters in username')
+  else
     successMsg(username)
   //=====
   if (lastnameInput === '')

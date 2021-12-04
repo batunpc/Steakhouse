@@ -36,7 +36,7 @@ body {
 
 .form_container p>label {
   display: block;
-  margin-top: 30px;
+  margin-top: 27px;
   padding: 12px 12px 0 12px;
   font-family: 'Poppins', sans-serif;
   position: relative;
@@ -58,7 +58,7 @@ body {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   outline: none;
-  border-radius: 0px 20px 0px 15px;
+  border-radius: 0px 20px 0px 17px;
   padding: 10px;
   background-color: #eccbbf
 }

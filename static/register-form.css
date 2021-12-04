@@ -1,5 +1,5 @@
 #signup_form {
-  height: 450px;
+  height: 440px;
 }
 
 .close {
@@ -64,6 +64,7 @@
 .isValid span {
   font-size: 11px;
   font-style: italic;
+  font-weight: 550;
   color: white;
   background-color: #900;
   border-radius: 0px 0 23px 2px;
@@ -87,7 +88,8 @@ span.userTypeErr {
   color: #D8000C;
   font-size: 14px;
   font-weight: bolder;
-  margin-left: 32px;
+  top: 5px;
+  left: 27px;
   text-align: center;
 }
 
@@ -143,8 +145,9 @@ span.userTypeErr {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 300px;
+  width: 310px;
   height: 37px;
+
   background: #332f33;
   transition: all .4s ease;
   border-radius: 10px;

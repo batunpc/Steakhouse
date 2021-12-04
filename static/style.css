@@ -247,7 +247,7 @@ a {
   position: absolute;
   top: 57%;
   left: 77%;
-  font-size: 60px;
+  font-size: 63px;
   transform: translate(-50%, -70%);
 
 }
@@ -265,7 +265,7 @@ a {
   cursor: pointer;
   position: relative;
   background-color: #24252a;
-  transition: all 0.1s ease-out;
+  transition: all 0.15s ease-out;
 
 }
 
@@ -301,12 +301,13 @@ a {
   display: grid;
   align-items: stretch;
   justify-items: center;
-  margin: 50px 0px;
+  margin: 70px 0px;
   color: #eccbbf;
 }
 
 .grid-content .content img {
-  width: 50%;
+  width: 180px;
+  height: 250px;
   border-radius: 20%
 }
 
@@ -322,12 +323,15 @@ a {
 
 .grid-content .content p {
   text-align: center;
+  display: flex;
+  align-items: center;
   font-size: 17px;
   line-height: 25px;
   font-family: 'Poppins', sans-serif;
   font-style: italic;
   padding: 0px 5px;
-  width: 70%;
+  width: 250px;
+  height: 100px;
 }
 
 /* ========= figure 1.2========== */
@@ -374,9 +378,9 @@ a {
   font-size: 20px;
   padding: 5px;
   color: #f17244;
-  font-family: flood-std, sans-serif;
+  font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  font-style: normal;
+  font-style: italic;
 }
 
 .grid figure h5 {
@@ -394,6 +398,8 @@ a {
 }
 
 .grid figure p {
+  display: flex;
+  align-items: center;
   text-align: center;
   font-size: 17px;
   line-height: 30px;
