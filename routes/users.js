@@ -106,8 +106,8 @@ router.post('/register',
             is_admin: isAdminToBool,
         }).then((userSaved)=>{
           if (isAdminToBool) 
-            console.log(`=> Administrator: "${userSaved.username}" has registered`)
-          else console.log(`=> Customer: "${userSaved.username}" has registered`)
+            console.log(`=> 🚀 Administrator: "${userSaved.username}" has registered`)
+          else console.log(`=> 🚀 Customer: "${userSaved.username}" has registered`)
           req.session.User=userSaved;
           res.redirect("registeredProfile")
         }).catch((error)=>{
@@ -203,7 +203,7 @@ router.post('/login',
           email: email,
         }}).then((userlogin)=>{
           if (userlogin) {
-            console.log(`User logged in with username: ${userlogin.email}`)
+            console.log(`User logged in with username: ${userlogin.email} 🚀`)
             req.session.User = userlogin;
             res.redirect('loginDashboard')
           }

@@ -12,7 +12,7 @@ const db = require('./config/database')
 db
 .authenticate()
 .then(function() {
-  console.log('=> Connection has been established successfully.');
+  console.log('=> Connected to Database 👾');
 })
 .catch(function(err) {
   console.log('=> Unable to connect to the database:', err);
