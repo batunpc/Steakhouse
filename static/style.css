@@ -397,7 +397,7 @@ a {
 
 .grid figure p {
   display: flex;
-  align-items: center;
+  justify-content: center;
   text-align: center;
   font-size: 17px;
   line-height: 30px;

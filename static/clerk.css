@@ -1,41 +1,13 @@
-th,
-td {
-  text-align: center;
-}
-
-th {
-  color: #eccbbf;
-  font-size: 25px;
-  font-family: 'Amatic SC', cursive;
-
-}
-
 .tableContainer {
   margin: 20px 50px
 }
 
-.brand_logo {
-  margin-left: 25px;
-}
-
-ul {
-  width: 90%;
-}
-
-.nav_links li {
-  margin-top: 22px;
-}
-
-.nav_btns li>a {
-  display: inline-block;
-  border-radius: 15%;
-  transition: all 0.5s ease;
-  white-space: nowrap;
-  padding: 10px;
-  border: solid 1px #eccbbf;
+.tabledata form,
+td,
+input {
   text-align: center;
-  line-height: 1px;
-  width: 110px
+  vertical-align: middle;
+
 }
 
 .button:hover a {
@@ -44,7 +16,7 @@ ul {
 
 article {
   background: linear-gradient(to right,
-      hsl(16, 93%, 48%),
+      rgb(236, 69, 9),
       hsl(24, 40%, 67%));
   background-clip: borde;
   -webkit-background-clip: text;

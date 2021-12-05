@@ -3,13 +3,14 @@
 
 <head>
   <link rel="stylesheet" href="/static/clerk.css">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 <body>
   <div class="tableContainer">
     <div class="row">
-      <div class="col-12 table-responsive ">
+      <div style="width:100%">
         <table class="table table-image ">
           <thead style="text-align: center;">
             <tr>
@@ -19,35 +20,37 @@
               <th scope="col">Food category</th>
               <th scope="col">Number of meals</th>
               <th scope="col">Images</th>
+              <th></th>
+              <th></th>
             </tr>
           </thead>
           <tbody>
             {{#each data}}
-            <tr>
+            <tr class="tabledata">
               <form method="post" action="updateUser" enctype="multipart/form-data">
                 <input type="hidden" name="id" value="{{id}}" />
-                <td style="vertical-align:middle;">
+                <td>
                   <input type="text" name="mealName" value="{{mealName}}" />
                 </td>
-                <td style="vertical-align:middle;">
-                  <input type=" text" name="price" value="{{price}}" />
+                <td>
+                  <input style="width:70px" type="text" name="price" value="{{price}}" />
                 </td>
-                <td style="vertical-align:middle;">
+                <td>
                   <input style="padding-bottom:100px; width:200px;" id="description" type="text" name="description"
                     value="{{description}}" />
                 </td>
-                <td style="vertical-align:middle; ">
+                <td style=" ">
                   <input type="text" name="category" value="{{category}}" />
                 </td>
-                <td style="vertical-align:middle;">
-                  <input type="number" name="meals_number" value="{{meals_number}}" />
+                <td>
+                  <input style="width:100px" type="number" name="meals_number" value="{{meals_number}}" />
                 </td>
-                <td class="w-25">
-                  <img class="img-fluid img-thumbnail;" src="/static/uploads/{{photo}}" />
+                <td>
+                  <img style="width:77px" src="/static/uploads/{{photo}}" />
                 </td>
-                <td style="vertical-align:middle;"> <input style="color:#f17244" type="submit" value="Update" /></td>
+                <td> <input style="color:#f17244" type="submit" value="Update" /></td>
               </form>
-              <td style="vertical-align:middle; ">
+              <td>
                 <form method="POST" action="deleteUser" enctype="multipart/form-data">
                   <input type="hidden" name="id" value="{{id}}" />
                   <input style="margin-top: 20px; color:#f17244" type="submit" value="Delete">
@@ -56,9 +59,10 @@
             </tr>
             {{else}}
             <tr>
-              <td colspan="6" class="text-center">No Data Available</td>
+              <td style="text-align:center" colspan="6">No Data Available</td>
             </tr>
             {{/each}}
+
           </tbody>
         </table>
       </div>
@@ -71,26 +75,30 @@
       <h1>Data Entry From Clerk </h1>
       <p>Create and update meal packages</p>
     </article>
+
     <br>
-    <div class="row">
-      <div class="col-md-5 mx-auto">
-        <form action="/clerk/register" method="POST" enctype="multipart/form-data">
+    <div>
+      <div style="margin-left:420px">
+        <form action="/clerk/register" method="POST" enctype="multipart/form-data" style="margin: 0 auto">
           <input style="width: 330px" id="mealName" type="text" name="mealName" placeholder="Meal Package name *"
             required />
           <input style="width: 170px" id="price" type="number" name="price" placeholder="Meal Package price *"
             required /><br />
           <div>
-            <textarea name="description" id="description" cols="84" rows="10"></textarea>
+            <textarea name="description" id="description" cols="62" rows="10"></textarea>
           </div>
           <input style="width:330px" id="category" type="text" name="category" placeholder="Food Category *" required />
           <input style="width: 170px" id="meals_number" type="number" name="meals_number"
             placeholder="Number of Meals *" /><br />
-          <input id="photo" type="file" name="photo" placeholder="Photo" /><br required />
+          <input id="photo" type="file" name="photo" placeholder="Photo" required />
+          <br><br>
           <button class="register-btn" type="submit">
             <span style="line-height: normal;">Create Record </span>
           </button>
         </form>
       </div>
+      <br>
+
     </div>
   </div>
 </body>

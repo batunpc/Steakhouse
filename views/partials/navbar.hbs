@@ -26,7 +26,7 @@
     <div class="nav_btns" style="margin-top:17px">
       {{#if User.username}}
       {{#if User.is_admin}}{{!-- if admin registered --}}
-      <button class="register-btn" style="width:170px; border-color:#f17244;">
+      <button class="register-btn" style="width:170px; padding:10px;  border-color:#f17244;">
         <a href="/clerk/register"><span>Clerk Entry</span></a>
       </button>
       <li> <a href="/users/loginDashboard" style="padding:10px; margin-right:25px;"> {{User.username}} <i

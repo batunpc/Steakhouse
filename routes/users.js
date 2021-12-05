@@ -7,18 +7,22 @@ const {
   validationResult
 } = require("express-validator");
 const session = require('express-session')
+const bcrypt = require('bcrypt');
 
-router.use(express.urlencoded({ extended: false }));
+
+router.use(express.urlencoded({
+  extended: false
+}));
 
 router.use(session({
-  secret:"mysecret",
-  resave:false,
-  saveUninitialized:true
+  secret: "mysecret",
+  resave: false,
+  saveUninitialized: true
 }))
 
-ensureLogin = (req, res, next)=> {
+ensureLogin = (req, res, next) => {
   if (!req.session.User) {
-    res.redirect("/login");
+    res.redirect("login");
   } else {
     next();
   }
@@ -59,7 +63,7 @@ router.post('/register',
   ],
   (req, res) => {
     const errors = validationResult(req);
-    const {username,lastname,email,password, is_admin} = req.body
+    const {username,lastname,email,password,is_admin} = req.body
     let userTypeErr = [];
     let registerErr = [];
 
@@ -92,32 +96,42 @@ router.post('/register',
       })
     } else if (errors.isEmpty()) {
       let isAdminToBool;
-      if (is_admin == "admin") 
+      if (is_admin == "admin")
         isAdminToBool = true;
-      else if (is_admin == "client") 
+      else if (is_admin == "client")
         isAdminToBool = false;
-  
+
+      var password_encrypted = req.body.password;
+
+      bcrypt.genSalt(10).then((salt) => {
+        bcrypt.hash(password_encrypted, salt).then((encryptPassw) => {
+          password_encrypted = encryptPassw;
+        }).catch((err) => {
+          console.error(`! 🤡 Error at hash ${err} `)
+        })
+      }).catch(err => console.log(`! 🤡Error at salt${err}`))
       db.sync().then(function () {
         User.create({
-            username: username,
-            lastname: lastname,
-            email: email,
-            password: password,
-            is_admin: isAdminToBool,
-        }).then((userSaved)=>{
-          if (isAdminToBool) 
+          username: username,
+          lastname: lastname,
+          email: email,
+          password: password_encrypted,
+          is_admin: isAdminToBool,
+        }).then((userSaved) => {
+          if (isAdminToBool)
             console.log(`=> 🚀 Administrator: "${userSaved.username}" has registered`)
           else console.log(`=> 🚀 Customer: "${userSaved.username}" has registered`)
-          req.session.User=userSaved;
+          req.session.User = userSaved;
           res.redirect("registeredProfile")
-        }).catch((error)=>{
+        }).catch((error) => {
           console.log(`\n= User cannot register =\n error: ${error}`)
         })
       }).catch(err => console.log(err))
     }
-})
-router.get('/registeredProfile', (req, res)=>{
+  })
+router.get('/registeredProfile', ensureLogin, (req, res) => {
   var userSaved = req.session.User;
+
   res.render("client/register_dashboard", {
     title: `${userSaved.username}'s profile`,
     layout: "forms",
@@ -188,7 +202,7 @@ router.post('/login',
               msg: "We cannot find an account with the provided credentials. Please create your account below"
             })
             res.render("client/loginForm", {
-              title:"Sign in",
+              title: "Sign in",
               dataLogin: req.body,
               loginErr,
               email,
@@ -197,30 +211,31 @@ router.post('/login',
             });
           }
         }).catch(err => console.log(err))
-    }else if (errors.isEmpty()) {
+    } else if (errors.isEmpty()) {
       User.findOne({
         where: {
           email: email,
-        }}).then((userlogin)=>{
-          if (userlogin) {
-            console.log(`User logged in with username: ${userlogin.email} 🚀`)
-            req.session.User = userlogin;
-            res.redirect('loginDashboard')
-          }
+        }
+      }).then((userlogin) => {
+        if (userlogin) {
+          console.log(`User logged in with username: ${userlogin.email} 🚀`)
+          req.session.User = userlogin;
+          res.redirect('loginDashboard')
+        }
       })
     }
   })
 
-router.get('/loginDashboard', ensureLogin, (req, res)=>{
+router.get('/loginDashboard', ensureLogin, (req, res) => {
   var userlogin = req.session.User
-  res.render('client/login_dashboard',{
-    title:`${userlogin.email}`,
-    layout:"forms",
+  res.render('client/login_dashboard', {
+    title: `${userlogin.email}`,
+    layout: "forms",
     userlogin
   })
-})  
+})
 
-router.get('/logout', (req, res)=>{
+router.get('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
 })
