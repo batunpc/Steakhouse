@@ -146,9 +146,9 @@ span.userTypeErr {
   left: 50%;
   transform: translateX(-50%);
   width: 310px;
-  height: 37px;
-
-  background: #332f33;
+  height: 38px;
+  border: .7px solid #eccbbf;
+  background: #303135;
   transition: all .4s ease;
   border-radius: 10px;
   font-weight: bolder;
