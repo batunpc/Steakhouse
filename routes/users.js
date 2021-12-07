@@ -168,8 +168,8 @@ router.post('/login',
               rej(new Error('email doesnt exist.'))
           }).catch(err => console.log(err));
       })
-    }),
-    check("password").notEmpty()/* .custom(password => {
+    }),/* 
+    check("password").notEmpty().custom(password => {
       return new Promise((res, rej) => {
         User.findOne({
             where: {
