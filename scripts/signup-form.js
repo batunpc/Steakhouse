@@ -12,18 +12,22 @@ validateEmail = (email_signup) => {
 validateUsername = (username) => {
   return /^[a-zA-Z0-9-_( )]{3,12}$/.test(username);
 }
+validateLastname = (lastname) => {
+  return /^[a-zA-Z0-9-_( )]{3,}$/.test(lastname);
+}
 validatePassword = (password) => {
   return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/.test(password);
 }
 
 
-formSignup.addEventListener('submit', event => {  
+formSignup.addEventListener('submit', event => {
   event.preventDefault();
   validateInput();
   if (validateUsername(username.value) &&
+    validateLastname(lastname.value) &&
     validateEmail(email_signup.value) &&
     validatePassword(password.value)) {
-      event.currentTarget.submit();
+    event.currentTarget.submit();
   }
 });
 
@@ -35,7 +39,7 @@ errorMsg = (input, message) => {
   span.innerText = message;
 }
 
-successMsg=(input) =>{
+successMsg = (input) => {
   const formSignup = input.parentElement;
   formSignup.className = 'isValid success';
 }
@@ -48,34 +52,38 @@ validateInput = () => {
 
   if (usernameInput === '')
     errorMsg(username, 'Username is required')
-  else if(usernameInput.length < 3)
+  else if (usernameInput.length < 3)
     errorMsg(username, "Username must be at least 3 characters")
   else if (usernameInput.length > 12)
     errorMsg(username, 'Username can be max 12 characters')
-  else if(!(validateUsername(usernameInput))) 
+  else if (!(validateUsername(usernameInput)))
     errorMsg(username, 'Invalid characters in username')
   else
     successMsg(username)
   //=====
   if (lastnameInput === '')
-    errorMsg(lastname, 'Last name is required')
-  else 
+    errorMsg(lastname, 'Lastname is required')
+  else if (lastnameInput.length < 3)
+    errorMsg(lastname, "Lastname must be at least 3 characters")
+  else if (!(validateLastname(lastnameInput)))
+    errorMsg(lastname, 'Invalid characters in lastname')
+  else
     successMsg(lastname)
   //=====
   if (emailInput === '')
     errorMsg(email_signup, 'Email is required')
-  else if (!(validateEmail(emailInput))) 
+  else if (!(validateEmail(emailInput)))
     errorMsg(email_signup, 'not a valid email')
-  else 
+  else
     successMsg(email_signup)
   //=====
   if (passwordInput === '')
     errorMsg(password, 'Password is required')
-  else if((passwordInput.length < 6))
+  else if ((passwordInput.length < 6))
     errorMsg(password, 'Password must be at least 6 characters')
   else if (!(validatePassword(passwordInput)))
     errorMsg(password, 'Password must contain uppercase,\nlowercase letters with digit(s)')
-  else 
+  else
     successMsg(password)
 }
 

@@ -168,21 +168,7 @@ router.post('/login',
               rej(new Error('email doesnt exist.'))
           }).catch(err => console.log(err));
       })
-    }),/* 
-    check("password").notEmpty().custom(password => {
-      return new Promise((res, rej) => {
-        User.findOne({
-            where: {
-              password
-            }
-          })
-          .then(passwordExist => {
-            if (passwordExist !== null)
-              res(true)
-            else rej(new Error('password doesnt exist.'))
-          }).catch(err => console.log(err))
-      })
-    })  */
+    })
   ],
   (req, res) => {
     const {email,username,password} = req.body
