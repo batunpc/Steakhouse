@@ -169,7 +169,7 @@ router.post('/login',
           }).catch(err => console.log(err));
       })
     }),
-    check("password").notEmpty().custom(password => {
+    check("password").notEmpty()/* .custom(password => {
       return new Promise((res, rej) => {
         User.findOne({
             where: {
@@ -182,7 +182,7 @@ router.post('/login',
             else rej(new Error('password doesnt exist.'))
           }).catch(err => console.log(err))
       })
-    }) 
+    })  */
   ],
   (req, res) => {
     const {email,username,password} = req.body
