@@ -57,7 +57,7 @@ a {
 
 .nav_links li>a:hover {
   color: #ff4500;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in;
 }
 
 .nav_btns {

@@ -88,6 +88,7 @@ router.post('/register',
             msg: "Please select your position to proceed"
           });
           res.render("client/registerForm", {
+            "title": "Sign up",
             data: req.body,
             userTypeErr,
             layout: "forms"
@@ -95,27 +96,26 @@ router.post('/register',
         }
       })
     } else if (errors.isEmpty()) {
+      //convert user type to bool
       let isAdminToBool;
       if (is_admin == "admin")
         isAdminToBool = true;
       else if (is_admin == "client")
         isAdminToBool = false;
-
-      var password_encrypted = req.body.password;
-
-      bcrypt.genSalt(10).then((salt) => {
-        bcrypt.hash(password_encrypted, salt).then((encryptPassw) => {
-          password_encrypted = encryptPassw;
-        }).catch((err) => {
-          console.error(`! 🤡 Error at hash ${err} `)
-        })
-      }).catch(err => console.log(`! 🤡Error at salt${err}`))
+      //bcrypt ==generate unique salt
+      bcrypt.genSalt(10).then((salt)=>{
+        bcrypt.hash(password, salt).then((encryptedPassw)=>{
+          User.password = encryptedPassw; 
+          console.log(`success🚀 hashing the password`)
+        }).catch(err => console.log(`🤡 Hashing error: ${err}`))
+      }).catch(err => console.log(`🤡 Salting error:${err}`))
+      
       db.sync().then(function () {
         User.create({
           username: username,
           lastname: lastname,
           email: email,
-          password: password_encrypted,
+          password: User.password,
           is_admin: isAdminToBool,
         }).then((userSaved) => {
           if (isAdminToBool)
@@ -169,7 +169,7 @@ router.post('/login',
           }).catch(err => console.log(err));
       })
     }),
-    check("password").notEmpty().custom(password => {
+   /*  check("password").notEmpty().custom(password => {
       return new Promise((res, rej) => {
         User.findOne({
             where: {
@@ -182,7 +182,7 @@ router.post('/login',
             else rej(new Error('password doesnt exist.'))
           }).catch(err => console.log(err))
       })
-    })
+    }) */
   ],
   (req, res) => {
     const {email,username,password} = req.body
@@ -218,11 +218,16 @@ router.post('/login',
         }
       }).then((userlogin) => {
         if (userlogin) {
-          console.log(`User logged in with username: ${userlogin.email} 🚀`)
-          req.session.User = userlogin;
-          res.redirect('loginDashboard')
+          bcrypt.compare(password, userlogin.password)
+          .then((match)=>{
+            if(match){
+              console.log(`User logged in with username: ${userlogin.email} 🚀`)
+              req.session.User = userlogin;
+              res.redirect('loginDashboard')
+            }
+          }).catch(err => console.log(`🤡 Hashing error: ${err}|| ${password} || ${userlogin.password}`))
         }
-      })
+      }).catch(err => console.log(`something went wrong => ${err}`))
     }
   })
 
