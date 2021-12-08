@@ -209,19 +209,7 @@ router.post('/login',
               console.log(`User logged in with username: ${userlogin.email} 🚀`)
               req.session.User = userlogin;
               res.redirect('loginDashboard')
-            }else{
-              loginErr.push({
-                msg: "We cannot find an account with the provided credentials. Please create your account below"
-              })
-            }       
-            res.render("client/loginForm", {
-              title: "Sign in",
-              dataLogin: req.body,
-              loginErr,
-              email,
-              password,
-              layout: "forms"
-            });
+            }
         
           }).catch(err => console.log(`🤡 Hashing error: ${err}`))
         }
