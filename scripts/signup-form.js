@@ -13,7 +13,7 @@ validateUsername = (username) => {
   return /^[a-zA-Z0-9-_( )]{3,12}$/.test(username);
 }
 validateLastname = (lastname) => {
-  return /^[a-zA-Z0-9-_( )]{3,}$/.test(lastname);
+  return /^[a-zA-Z0-9]{3,}$/.test(lastname);
 }
 validatePassword = (password) => {
   return /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{6,}$/.test(password);
