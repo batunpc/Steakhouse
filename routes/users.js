@@ -115,7 +115,7 @@ router.post('/register',
           username: username,
           lastname: lastname,
           email: email,
-          password: User.password,
+          password: encryptedPassw,
           is_admin: isAdminToBool,
         }).then((userSaved) => {
           if (isAdminToBool)
