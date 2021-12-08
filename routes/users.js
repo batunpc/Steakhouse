@@ -107,26 +107,25 @@ router.post('/register',
         bcrypt.hash(password, salt).then((encryptedPassw)=>{
           User.password = encryptedPassw; 
           console.log(`success🚀 hashing the password`)
+          db.sync().then(function () {
+            User.create({
+              username: username,
+              lastname: lastname,
+              email: email,
+              password: encryptedPassw,
+              is_admin: isAdminToBool,
+            }).then((userSaved) => {
+              if (isAdminToBool)
+                console.log(`=> 🚀 Administrator: "${userSaved.username}" has registered`)
+              else console.log(`=> 🚀 Customer: "${userSaved.username}" has registered`)
+              req.session.User = userSaved;
+              res.redirect("registeredProfile")
+            }).catch((error) => {
+              console.log(`\n= User cannot register =\n error: ${error}`)
+            })
+          }).catch(err => console.log(err))
         }).catch(err => console.log(`🤡 Hashing error: ${err}`))
       }).catch(err => console.log(`🤡 Salting error:${err}`))
-      
-      db.sync().then(function () {
-        User.create({
-          username: username,
-          lastname: lastname,
-          email: email,
-          password: encryptedPassw,
-          is_admin: isAdminToBool,
-        }).then((userSaved) => {
-          if (isAdminToBool)
-            console.log(`=> 🚀 Administrator: "${userSaved.username}" has registered`)
-          else console.log(`=> 🚀 Customer: "${userSaved.username}" has registered`)
-          req.session.User = userSaved;
-          res.redirect("registeredProfile")
-        }).catch((error) => {
-          console.log(`\n= User cannot register =\n error: ${error}`)
-        })
-      }).catch(err => console.log(err))
     }
   })
 router.get('/registeredProfile', ensureLogin, (req, res) => {
