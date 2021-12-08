@@ -9,7 +9,6 @@ router.get("/", (req, res) => {
     order: ["id"]
   }).then((data) => {
     res.render("home/home", {
-      title: "Batu's Steakhouse",
       layout: "main",
       data: data
     });
