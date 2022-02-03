@@ -1,27 +1,29 @@
-<!doctype html>
 <html>
 
-<head>
-  <title>{{userlogin.username}}'s Profile</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/static/user-profile.css">
+  <head>
+    <title>{{userlogin.username}}'s Profile</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/user-profile.css" />
 
-</head>
+  </head>
 
-<body>
-  <div class="container">
-    <h3 style="margin-top: 40px">
-      <span style="color:#fff">Welcome back, </span>
-      <span style="color:#f17244; font-style:italic">{{userlogin.email}}</span>
-    </h3>
-    <h4 style="color:#eccbbf" id="spanDate"></h4>
-    <script type="text/javascript" src="/scripts/displayDate.js"></script>
-  </div>
-  <div class="container">
-    <button class="pull-left"><a href="/#menu">Browse Meals</a></button>
-    <button class="pull-right"><a href="/users/logout">Logout <i class="fas fa-sign-out-alt"></i></a></button>
+  <body>
+    <div class="container">
+      <h3 style="margin-top: 40px">
+        <span style="color:#fff">Welcome back, </span>
+        <span
+          style="color:#f17244; font-style:italic"
+        >{{userlogin.email}}</span>
+      </h3>
+      <h4 style="color:#eccbbf" id="spanDate"></h4>
+      <script type="text/javascript" src="/scripts/displayDate.js"></script>
+    </div>
+    <div class="container">
+      <button class="pull-left"><a href="/#menu">Browse Meals</a></button>
+      <button class="pull-right"><a href="/users/logout">Logout
+          <i class="fas fa-sign-out-alt"></i></a></button>
 
-  </div>
-</body>
+    </div>
+  </body>
 
 </html>

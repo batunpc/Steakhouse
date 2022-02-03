@@ -1,20 +1,27 @@
-{{!-- this nav bar is designed for login form --}}
+{{! this nav bar is designed for login form }}
 <!--grid navigation bar -->
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <link rel="stylesheet" href="/static/style.css" />
-  <link rel="stylesheet" href="/static/login-form.css">
-  <link rel="stylesheet" href="/static/register-form.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/static/login-form.css" />
+  <link rel="stylesheet" href="/static/register-form.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
 </head>
-
 
 <header>
   <nav class="navbar" style="grid-template-columns: .4fr 1.4fr .6fr;">
     <div class="brand_logo">
       <a href="/">
-        <img class="logo" src="/static/images/logo.webp" style="width:150px" alt="Batu's SteakHouse" />
+        <img
+          class="logo"
+          src="/static/images/logo.webp"
+          style="width:150px"
+          alt="Batu's SteakHouse"
+        />
       </a>
     </div>
     <ul class="nav_links" style="margin-top:15px">
@@ -25,27 +32,37 @@
     </ul>
     <div class="nav_btns" style="margin-top:17px">
       {{#if User.username}}
-      {{#if User.is_admin}}{{!-- if admin registered --}}
-      <button class="register-btn" style="width:170px; padding:10px;  border-color:#f17244;">
-        <a href="/clerk/register"><span>Clerk Entry</span></a>
-      </button>
-      <li> <a href="/users/loginDashboard" style="padding:10px; margin-right:25px;"> {{User.username}} <i
-            class="fa fa-home"></i></a></li>
-
-      {{else}}{{!-- if customer registered/logged in --}}
-      <span class="nav_icons">
-        <li> <a href=""> <i class="fas fa-search"></i></a></li>
-        <li> <a href=""><i class="fas fa-shopping-cart"></i></a></li>
-      </span>
-      <li> <a href="/users/loginDashboard" style="padding:11px"> {{User.username}} <i class="fa fa-home"></i></a></li>
-      {{/if}}
-      {{else}}{{!-- default --}}
-      <span class="nav_icons">
-        <li> <a href=""> <i class="fas fa-search"></i></a></li>
-        <li> <a href=""> <i class="fas fa-shopping-cart"></i></a></li>
-      </span>
-      <li> <a href="/users/login" style="padding:12px; line-height:10px">Sign in <i class="fas fa-sign-in-alt"></i></a>
-      </li>
+        {{#if User.is_admin}}{{! if admin registered }}
+          <button
+            class="register-btn"
+            style="width:170px; padding:10px;  border-color:#f17244;"
+          >
+            <a href="/clerk/register"><span>Clerk Entry</span></a>
+          </button>
+          <li>
+            <a
+              href="/users/loginDashboard"
+              style="padding:10px; margin-right:25px;"
+            > {{User.username}} <i class="fa fa-home"></i></a></li>
+        {{else}}{{! if customer registered/logged in }}
+          <span class="nav_icons">
+            <li> <a href=""> <i class="fas fa-search"></i></a></li>
+            <li> <a href=""><i class="fas fa-shopping-cart"></i></a></li>
+          </span>
+          <li>
+            <a href="/users/loginDashboard" style="padding:11px">
+              {{User.username}}
+              <i class="fa fa-home"></i></a></li>
+        {{/if}}
+      {{else}}{{! default }}
+        <span class="nav_icons">
+          <li> <a href=""> <i class="fas fa-search"></i></a></li>
+          <li> <a href=""> <i class="fas fa-shopping-cart"></i></a></li>
+        </span>
+        <li>
+          <a href="/users/login" style="padding:12px; line-height:10px">Sign in
+            <i class="fas fa-sign-in-alt"></i></a>
+        </li>
       {{/if}}
     </div>
   </nav>

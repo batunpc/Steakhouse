@@ -1,26 +1,25 @@
 const express = require("express");
 const router = express.Router();
-const Clerk = require('../models/Clerk');
-const session = require('express-session');
+const Clerk = require("../models/Clerk");
+const session = require("express-session");
 
 //home
 router.get("/", (req, res) => {
   Clerk.findAll({
-    order: ["id"]
+    order: ["id"],
   }).then((data) => {
     res.render("home/home", {
       layout: "main",
-      data: data
+      data: data,
     });
-  })
+  });
 });
-
 
 //Meals Package
 router.get("/mealPack", (req, res) => {
   res.render("home/mealPack", {
-    title: "Meal Packages | Batu's Steakhouse"
-  })
+    title: "Meal Packages | Batu's Steakhouse",
+  });
 });
 
 module.exports = router;

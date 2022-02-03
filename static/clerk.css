@@ -1,5 +1,5 @@
 .tableContainer {
-  margin: 20px 50px
+  margin: 20px 50px;
 }
 
 .tabledata form,
@@ -7,7 +7,6 @@ td,
 input {
   text-align: center;
   vertical-align: middle;
-
 }
 
 .button:hover a {
@@ -15,9 +14,7 @@ input {
 }
 
 article {
-  background: linear-gradient(to right,
-      rgb(236, 69, 9),
-      hsl(24, 40%, 67%));
+  background: linear-gradient(to right, rgb(236, 69, 9), hsl(24, 40%, 67%));
   background-clip: borde;
   -webkit-background-clip: text;
   -webkit-text-fill-color: #f17244;
@@ -33,7 +30,6 @@ h1 {
   color: #f17244;
   font-size: 200%;
 }
-
 
 h1,
 p,

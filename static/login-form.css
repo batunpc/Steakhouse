@@ -2,7 +2,6 @@ body {
   background-color: #303135;
 }
 
-
 .form_container {
   max-width: 340px;
   background: #f4f7f8;
@@ -10,12 +9,12 @@ body {
   padding: 27px 37px;
   background-color: #24252a;
   border-radius: 20px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   font-style: italic;
 }
 
 .form_container fieldset {
-  border: none
+  border: none;
 }
 
 .form_container legend {
@@ -34,11 +33,11 @@ body {
   vertical-align: middle;
 }
 
-.form_container p>label {
+.form_container p > label {
   display: block;
   margin-top: 27px;
   padding: 12px 12px 0 12px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   position: relative;
 }
 
@@ -60,7 +59,7 @@ body {
   outline: none;
   border-radius: 0px 20px 0px 17px;
   padding: 10px;
-  background-color: #eccbbf
+  background-color: #eccbbf;
 }
 
 .form_container input[id="username"]:focus,
@@ -71,8 +70,9 @@ body {
 }
 
 ::placeholder {
-  color: #34353880;
+  color: #3f404380;
   opacity: 1;
+  font-style: italic;
 }
 
 .error.active {
@@ -102,7 +102,7 @@ body {
   border-radius: 10px;
   box-shadow: 0 3px #999;
   width: 92%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 #log-in-btn:hover {
@@ -111,14 +111,14 @@ body {
 
 #log-in-btn:active {
   box-shadow: 0 3px #999;
-  transform: translateY(2px)
+  transform: translateY(2px);
 }
 
 /*autharization error in login */
 .err_auth {
   text-align: center;
   font-style: italic;
-  color: #D8000C;
+  color: #d8000c;
   position: relative;
   padding-top: 17px;
   font-size: medium;
@@ -139,7 +139,7 @@ body {
   margin: 0 10px;
   color: #eccbbf;
   border-radius: 50%;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   padding: 10px;
 }
 
