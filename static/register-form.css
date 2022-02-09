@@ -7,9 +7,9 @@
   color: black;
   line-height: 25px;
   position: absolute;
-  left: 900px;
+  left: 890px;
   text-align: center;
-  top: 222px;
+  top: 224px;
   width: 35px;
   text-decoration: none;
   font-weight: bold;
@@ -42,7 +42,6 @@
   transform: scale(0.35, 0.37);
 }
 
-
 .isValid label {
   position: relative;
   display: inline-block;
@@ -73,19 +72,17 @@
   padding: 5px;
   margin: 0;
   visibility: hidden;
-
 }
 
 .isValid.error span {
   visibility: visible;
   border-color: #900;
-
 }
 
 span.userTypeErr {
   position: relative;
   font-style: italic;
-  color: #D8000C;
+  color: #d8000c;
   font-size: 14px;
   font-weight: bolder;
   top: 5px;
@@ -118,7 +115,7 @@ span.userTypeErr {
 }
 
 .register-btn span:after {
-  content: '\00bb';
+  content: "\00bb";
   position: absolute;
   opacity: 0;
   top: 0;
@@ -128,7 +125,6 @@ span.userTypeErr {
 
 .register-btn:hover {
   background-color: #eb4f37;
-
 }
 
 .register-btn:hover span {
@@ -147,16 +143,16 @@ span.userTypeErr {
   transform: translateX(-50%);
   width: 310px;
   height: 38px;
-  border: .7px solid #eccbbf;
+  border: 0.7px solid #eccbbf;
   background: #303135;
-  transition: all .4s ease;
+  transition: all 0.4s ease;
   border-radius: 10px;
   font-weight: bolder;
   font-size: 17px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
-input[type=radio] {
+input[type="radio"] {
   display: none;
 }
 
@@ -168,32 +164,33 @@ input[type=radio] {
   transition: all 0.2s ease;
 }
 
-label[for=customer] {
+label[for="customer"] {
   position: absolute;
   left: 10px;
   height: 20px;
 }
 
-label[for=admin] {
+label[for="admin"] {
   position: absolute;
   right: 70px;
 }
 
-#admin:checked~.switch {
+#admin:checked ~ .switch {
   background: #eb4f37;
   box-shadow: 0 0 12px #eb4f37;
+  border: none;
 }
 
-#customer:checked~.switch {
+#customer:checked ~ .switch {
   background: #32a832d5;
   box-shadow: 0 0 12px #32a832d5;
+  border: none;
 }
 
-#customer:checked~.switch label[for=customer] {
+#customer:checked ~ .switch label[for="customer"] {
   color: #fff;
-
 }
 
-#admin:checked~.switch label[for=admin] {
+#admin:checked ~ .switch label[for="admin"] {
   color: #fff;
 }
